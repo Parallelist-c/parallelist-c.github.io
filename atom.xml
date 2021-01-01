@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://parallelist-c.github.io</id>
     <title>Parallelist</title>
-    <updated>2021-01-01T07:26:04.796Z</updated>
+    <updated>2021-01-01T07:27:03.421Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://parallelist-c.github.io"/>
     <link rel="self" href="https://parallelist-c.github.io/atom.xml"/>
@@ -856,7 +856,7 @@ x^{\overline{n}}=\sum_{i=0}^{n}\begin{bmatrix}n\\i\end{bmatrix}x^i
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[【NOI2015】寿司晚宴]]></title>
+        <title type="html"><![CDATA[[NOI2015] 寿司晚宴]]></title>
         <id>https://parallelist-c.github.io/post/noi2015-shou-si-wan-yan/</id>
         <link href="https://parallelist-c.github.io/post/noi2015-shou-si-wan-yan/">
         </link>
