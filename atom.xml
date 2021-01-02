@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://parallelist-c.github.io</id>
     <title>Parallelist</title>
-    <updated>2021-01-02T04:13:57.293Z</updated>
+    <updated>2021-01-02T12:11:35.239Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://parallelist-c.github.io"/>
     <link rel="self" href="https://parallelist-c.github.io/atom.xml"/>
@@ -10,6 +10,65 @@
     <logo>https://parallelist-c.github.io/images/avatar.png</logo>
     <icon>https://parallelist-c.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Parallelist</rights>
+    <entry>
+        <title type="html"><![CDATA[PAM 学习笔记]]></title>
+        <id>https://parallelist-c.github.io/post/PAM-xue-xi-bi-ji/</id>
+        <link href="https://parallelist-c.github.io/post/PAM-xue-xi-bi-ji/">
+        </link>
+        <updated>2021-01-02T02:54:21.000Z</updated>
+        <content type="html"><![CDATA[<p>回文自动机（PAM）是针对给定串，包含了该串所有回文子串的信息的自动机。<br>
+PAM 的每个节点代表了一个本质不同的回文子串，记 s[p] 为点 p 代表的回文子串。<br>
+PAM 的每个节点有三个基础属性：fail/len/child 。<br>
+len：a[p].len 表示 s[p] 的长度。<br>
+fail：a[p].fail 连向了点 x ，满足 s[x] 是 s[p] 的最长后缀回文子串。<br>
+child：a[p].child[v] 连向了点 x ，满足 s[x] 恰是 v+s[p]+v 。</p>
+<p>由于回文串有奇偶之分，所以我们需要建立两个根：-1 和 0 ，分别为奇根和偶根。奇根的 len 为 -1 ，代表 -1 串（方便插入单个字符构成的回文串）；偶根的 len 为 0 ，代表空串。奇根的 fail 可以任意连，而偶根的 fail 定义为连向奇根。</p>
+<p>现在给定字符串 t ，我们考虑使用增量法来构造 PAM 。<br>
+假设新加入的位置为 v ，上一个权值加入后在 SAM 上的位置是 las 。v 可以构成的回文子串可以视作 t[v']+mid+t[v] 的形式，其中 mid 部分也为回文串。故我们从 las 开始，若满足 t[v]=t[v-a[las].len-1] ，意味着我们找到了对应的最大回文串；否则执行 las=a[las].fail 并重新检验。因为 fail 指向的是最长的后缀回文子串，所以我们必定会经过所有可能。<br>
+假设我们找到了满足 t[v]=t[v-a[las].len-1] 的 las ，此时有两种可能：</p>
+<ul>
+<li>a[las].c[t[v]] 已存在。此时 v 对于不同种类的回文子串而言无任何贡献。</li>
+<li>a[las].c[t[v]] 未存在。此时发现了新的回文子串。新建节点并初始化其 len/fail 值即可。</li>
+</ul>
+<p>构建代码：</p>
+<pre><code class="language-cpp">namespace PAM{
+    int s[N];
+    int tot,las,top;
+    struct PAM{
+        int len,sum,fail,c[26];
+    }a[N];
+    void init(){
+        tot=1,las=0,top=0;
+        a[0].len=0,a[1].len=-1;
+        a[0].fail=a[1].fail=1;
+        memset(s,-1,sizeof s);
+    }
+    int getfail(int x,int p){
+        while(s[p]!=s[p-a[x].len-1])
+            x=a[x].fail;
+        return x; 
+    }
+    void insert(int v){
+        s[++top]=v;
+        int cur=getfail(las,top);
+        if(a[cur].c[v]==0){
+            ++tot;
+            a[tot].len=a[cur].len+2;
+            a[tot].fail=a[getfail(a[cur].fail,top)].c[v];
+            a[cur].c[v]=tot;
+        }
+        las=a[cur].c[v];
+    }
+}
+</code></pre>
+<p>接着总结下 PAM 的一些应用。</p>
+<p>本质不同的回文串个数：这个显然就是 tot-1 。</p>
+<p>回文串的出现次数：构建 PAM 时我们只统计了极长的该回文串的数量，但其他情况可以一定可以通过跳 fail 统计到。考虑 insert(a[i]) 后若新增节点代表的是 s[j...i] ，那么所有以 i 结尾的回文子串必定是 s[j...i] 的后缀子串。拓扑排序后 dp 即可。</p>
+<p>与 PAM 配套的有一个 trans 指针，定义为指向小于等于当前节点长度的一半的最长回文后缀。<br>
+求解 trans 的方法与 fail 类似。从父节点的 trans 开始检验，如果当前并不能构成回文子串/长度大于一半，就继续跳 fail 。</p>
+<p>PAM 的拓展性没有 SAM 强，但也十分灵活。DFA 这种东西，平常一定要多加深理解啊 👊 。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Query on a tree VI 解题报告]]></title>
         <id>https://parallelist-c.github.io/post/query-on-a-tree-vi-jie-ti-bao-gao/</id>
