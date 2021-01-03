@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://parallelist-c.github.io</id>
+    <id>http://localhost:4000</id>
     <title>Parallelist</title>
-    <updated>2021-01-03T05:53:15.489Z</updated>
+    <updated>2021-01-03T05:59:14.561Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://parallelist-c.github.io"/>
-    <link rel="self" href="https://parallelist-c.github.io/atom.xml"/>
+    <link rel="alternate" href="http://localhost:4000"/>
+    <link rel="self" href="http://localhost:4000/atom.xml"/>
     <subtitle>浅い夢だから 胸をはなれない</subtitle>
-    <logo>https://parallelist-c.github.io/images/avatar.png</logo>
-    <icon>https://parallelist-c.github.io/favicon.ico</icon>
+    <logo>http://localhost:4000/images/avatar.png</logo>
+    <icon>http://localhost:4000/favicon.ico</icon>
     <rights>All rights reserved 2021, Parallelist</rights>
     <entry>
         <title type="html"><![CDATA[[HNOI2004]L语言 解题报告]]></title>
-        <id>https://parallelist-c.github.io/post/hnoi2004l-yu-yan/</id>
-        <link href="https://parallelist-c.github.io/post/hnoi2004l-yu-yan/">
+        <id>http://localhost:4000/post/hnoi2004l-yu-yan/</id>
+        <link href="http://localhost:4000/post/hnoi2004l-yu-yan/">
         </link>
         <updated>2021-01-03T04:45:53.000Z</updated>
         <content type="html"><![CDATA[<h2 id="description">Description</h2>
@@ -86,8 +86,8 @@ int main(){
     </entry>
     <entry>
         <title type="html"><![CDATA[[HAOI2009]求回文串 解题报告]]></title>
-        <id>https://parallelist-c.github.io/post/haoi2009qiu-hui-wen-chuan-jie-ti-bao-gao/</id>
-        <link href="https://parallelist-c.github.io/post/haoi2009qiu-hui-wen-chuan-jie-ti-bao-gao/">
+        <id>http://localhost:4000/post/haoi2009qiu-hui-wen-chuan-jie-ti-bao-gao/</id>
+        <link href="http://localhost:4000/post/haoi2009qiu-hui-wen-chuan-jie-ti-bao-gao/">
         </link>
         <updated>2021-01-03T01:38:23.000Z</updated>
         <content type="html"><![CDATA[<h2 id="description">Description</h2>
@@ -124,8 +124,8 @@ while(idx&lt;=len&amp;&amp;nl&lt;=nr){
     </entry>
     <entry>
         <title type="html"><![CDATA[PAM 学习笔记]]></title>
-        <id>https://parallelist-c.github.io/post/PAM-xue-xi-bi-ji/</id>
-        <link href="https://parallelist-c.github.io/post/PAM-xue-xi-bi-ji/">
+        <id>http://localhost:4000/post/PAM-xue-xi-bi-ji/</id>
+        <link href="http://localhost:4000/post/PAM-xue-xi-bi-ji/">
         </link>
         <updated>2021-01-02T02:54:21.000Z</updated>
         <content type="html"><![CDATA[<p>回文自动机（PAM）是针对给定串，包含了该串所有回文子串的信息的自动机。<br>
@@ -183,8 +183,8 @@ child：a[p].child[v] 连向了点 x ，满足 s[x] 恰是 v+s[p]+v 。因此转
     </entry>
     <entry>
         <title type="html"><![CDATA[Query on a tree VI 解题报告]]></title>
-        <id>https://parallelist-c.github.io/post/query-on-a-tree-vi-jie-ti-bao-gao/</id>
-        <link href="https://parallelist-c.github.io/post/query-on-a-tree-vi-jie-ti-bao-gao/">
+        <id>http://localhost:4000/post/query-on-a-tree-vi-jie-ti-bao-gao/</id>
+        <link href="http://localhost:4000/post/query-on-a-tree-vi-jie-ti-bao-gao/">
         </link>
         <updated>2020-12-29T12:06:33.000Z</updated>
         <content type="html"><![CDATA[<h2 id="description">Description</h2>
@@ -253,8 +253,8 @@ child：a[p].child[v] 连向了点 x ，满足 s[x] 恰是 v+s[p]+v 。因此转
     </entry>
     <entry>
         <title type="html"><![CDATA[[AHOI2005] 航线规划 解题报告]]></title>
-        <id>https://parallelist-c.github.io/post/ahoi2005-hang-xian-gui-hua/</id>
-        <link href="https://parallelist-c.github.io/post/ahoi2005-hang-xian-gui-hua/">
+        <id>http://localhost:4000/post/ahoi2005-hang-xian-gui-hua/</id>
+        <link href="http://localhost:4000/post/ahoi2005-hang-xian-gui-hua/">
         </link>
         <updated>2020-12-29T06:13:00.000Z</updated>
         <content type="html"><![CDATA[<h2 id="description">Description</h2>
@@ -342,8 +342,8 @@ using namespace LCT;
     </entry>
     <entry>
         <title type="html"><![CDATA[ABC163F path pass i 解题报告]]></title>
-        <id>https://parallelist-c.github.io/post/abc163f-path-pass-i-jie-ti-bao-gao/</id>
-        <link href="https://parallelist-c.github.io/post/abc163f-path-pass-i-jie-ti-bao-gao/">
+        <id>http://localhost:4000/post/abc163f-path-pass-i-jie-ti-bao-gao/</id>
+        <link href="http://localhost:4000/post/abc163f-path-pass-i-jie-ti-bao-gao/">
         </link>
         <updated>2020-12-27T06:07:05.000Z</updated>
         <content type="html"><![CDATA[<h2 id="description">Description</h2>
@@ -377,8 +377,8 @@ using namespace LCT;
     </entry>
     <entry>
         <title type="html"><![CDATA[OI 回忆录]]></title>
-        <id>https://parallelist-c.github.io/post/oi-hui-yi-lu/</id>
-        <link href="https://parallelist-c.github.io/post/oi-hui-yi-lu/">
+        <id>http://localhost:4000/post/oi-hui-yi-lu/</id>
+        <link href="http://localhost:4000/post/oi-hui-yi-lu/">
         </link>
         <updated>2020-12-21T14:00:00.000Z</updated>
         <content type="html"><![CDATA[<blockquote>
@@ -453,7 +453,7 @@ using namespace LCT;
 <p>讲完计算几何，Ysuperman 看我任务不重，又把我放进了图论组。在图论组里我的分工是点分树和生成树相关。</p>
 <p>之前对点分树就有一定的心理准备，真正面对时还是感觉瑟瑟发抖。是个题码量至少 3kb 以上，离谱的还有 4.5kb 。而且尽管码农，思维也是精妙无比。</p>
 <p>说到这里，我突然想到了 紫荆花之恋 。是了，这个题我可以吹一辈子，就算退役个两三年，面对学弟学妹我大概也可以矜持地吹这道题吧 😉 ​ 。（开个玩笑</p>
-<figure data-type="image" tabindex="1"><img src="https://parallelist-c.github.io/post-images/1609485742982.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="http://localhost:4000/post-images/1609485742982.png" alt="" loading="lazy"></figure>
 <p><s>我怎么会说这道神题我做了整整一天呢 qwq</s></p>
 <p>10.1 放了一天假，正巧赶上了模联城际会议。太幸运了 好开心。</p>
 <p>10.2 学习了重构树。这东西很厉害，什么瓶颈路问题都可以直接秒了。学完大概有一种相见恨晚的感觉。</p>
@@ -485,15 +485,15 @@ using namespace LCT;
 <h2 id="part-4-noip2020">Part 4 NOIp2020</h2>
 <p>以往的考试考前都是各种学，各种复习板子。直到这次联赛前，ZJY 在 U 盘里拷了个 counter-strike 1.6 。</p>
 <p>单独一个人颓的时候很多，全组 8 个人开黑绝无仅有：</p>
-<figure data-type="image" tabindex="2"><img src="https://parallelist-c.github.io/post-images/1609485755204.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="http://localhost:4000/post-images/1609485755204.png" alt="" loading="lazy"></figure>
 <p>考前的最后一次团建（？</p>
 <p>NOIp：60+84+0+35=179 再努努力吧。</p>
 ]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[Atcoder Regular Contest 107 题解]]></title>
-        <id>https://parallelist-c.github.io/post/atcoder-regular-contest-107-ti-jie/</id>
-        <link href="https://parallelist-c.github.io/post/atcoder-regular-contest-107-ti-jie/">
+        <id>http://localhost:4000/post/atcoder-regular-contest-107-ti-jie/</id>
+        <link href="http://localhost:4000/post/atcoder-regular-contest-107-ti-jie/">
         </link>
         <updated>2020-11-01T14:33:35.000Z</updated>
         <content type="html"><![CDATA[<h2 id="pro-a-simple-math">Pro A Simple Math</h2>
@@ -706,8 +706,8 @@ int main(){
     </entry>
     <entry>
         <title type="html"><![CDATA[Atcoder Regular Contest 106 题解]]></title>
-        <id>https://parallelist-c.github.io/post/atcoder-regular-contest-106-ti-jie/</id>
-        <link href="https://parallelist-c.github.io/post/atcoder-regular-contest-106-ti-jie/">
+        <id>http://localhost:4000/post/atcoder-regular-contest-106-ti-jie/</id>
+        <link href="http://localhost:4000/post/atcoder-regular-contest-106-ti-jie/">
         </link>
         <updated>2020-10-25T13:44:30.000Z</updated>
         <content type="html"><![CDATA[<h2 id="pro-a-106">Pro A 106</h2>
@@ -960,8 +960,8 @@ int main(){
     </entry>
     <entry>
         <title type="html"><![CDATA[求和式转化]]></title>
-        <id>https://parallelist-c.github.io/post/qiu-he-shi-zhuan-hua/</id>
-        <link href="https://parallelist-c.github.io/post/qiu-he-shi-zhuan-hua/">
+        <id>http://localhost:4000/post/qiu-he-shi-zhuan-hua/</id>
+        <link href="http://localhost:4000/post/qiu-he-shi-zhuan-hua/">
         </link>
         <updated>2020-10-11T11:52:27.000Z</updated>
         <content type="html"><![CDATA[<p>在计数问题中我们经常需要对求和的式子进行转化来加速求和。这里略作整理。</p>
