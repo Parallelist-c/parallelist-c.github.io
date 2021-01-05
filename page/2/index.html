@@ -9,7 +9,7 @@
 <meta name="description" content="浅い夢だから 胸をはなれない">
 <meta name="theme-color" content="#000">
 <title>Parallelist</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1609762934584">
+<link rel="shortcut icon" href="/favicon.ico?v=1609850217035">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -193,19 +193,19 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">13</span>
+        <span class="site-item-stat-count">14</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="">
-        <span class="site-item-stat-count">10</span>
+        <span class="site-item-stat-count">11</span>
         <span class="site-item-stat-name language" data-lan="category">分类</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="/tags/">
-        <span class="site-item-stat-count">10</span>
+        <span class="site-item-stat-count">11</span>
         <span class="site-item-stat-name language" data-lan="tag">标签</span>
       </a>
     </div>
@@ -265,6 +265,94 @@
         <div class="section-box gemini">
           <section class="section  posts-expand slide-down-in">
             
+  <article class="post-list-box  post box-shadow-wrapper">
+    <div class="article-wrapper bg-color">
+      <section class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://parallelist-c.github.io/post/atcoder-regular-contest-107-ti-jie/">
+      Atcoder Regular Contest 107 题解
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span class="language" data-lan="publish">发布于</span>
+      <span class="publish-time" data-t="2020-11-01 22:33:35">2020-11-01</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+    <span class="meta-item">
+      <i class="fa fa-folder-o"></i>
+      <span class="pc-show language" data-lan="category-in">分类于</span>
+      
+      
+      <a href="https://parallelist-c.github.io/tag/S_eS05vMx/">
+        <span>比赛报告</span>
+      </a>
+      
+      
+    </span>
+    <span class="post-meta-divider">|</span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>14<span class="language" data-lan="minute">分钟</span></span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>2685<span class="pc-show language" data-lan="words">字数</span></span>
+    </span>
+    
+  </div>
+</section>
+      <div class="post-body">
+        
+        
+          
+            <!-- 没有手动摘要切开启了自动摘要,则根据配置筛除摘要内容 -->
+            
+            
+              
+              
+              
+            
+              
+              
+              
+            
+              
+              
+              
+            
+              
+              
+              
+            
+            
+              <p><h2 id="pro-a-simple-math">Pro A Simple Math</h2>
+<p>题意：给定 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo separator="true">,</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">a,b,c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">c</span></span></span></span> ，求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>a</mi></msubsup><msubsup><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>b</mi></msubsup><msubsup><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>c</mi></msubsup><mi>i</mi><mo>×</mo><mi>j</mi><mo>×</mo><mi>k</mi><mspace></mspace><mspace width="0.4444444444444444em"/><mo>(</mo><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi></mrow><mspace width="0.3333333333333333em"/><mn>998244353</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">\sum\limits_{i=1}^{a}\sum\limits_{j=1}^{b}\sum\limits_{k=1}^{c}i\times j\times k\pmod{998244353}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.64989em;vertical-align:-1.113777em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3513970000000004em;"><span style="top:-2.122331em;margin-left:0em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.0000050000000003em;"><span class="pstrut" style="height:3em;"></span><span><span class="mop op-symbol small-op">∑</span></span></span><span style="top:-3.950005em;margin-left:0em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">a</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9776689999999999em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.5361130000000003em;"><span style="top:-2.122331em;margin-left:0em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.0000050000000003em;"><span class="pstrut" style="height:3em;"></span><span><span class="mop op-symbol small-op">∑</span></span></span><span style="top:-3.950005em;margin-left:0em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">b</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.113777em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.351397em;"><span style="top:-2.097887em;margin-left:0em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.000005em;"><span class="pstrut" style="height:3em;"></span><span><span class="mop op-symbol small-op">∑</span></span></span><span style="top:-3.950005em;margin-left:0em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">c</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.002113em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace allowbreak"></span><span class="mspace" style="margin-right:0.4444444444444444em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord"><span class="mord mathrm">m</span><span class="mord mathrm">o</span><span class="mord mathrm">d</span></span></span><span class="mspace" style="margin-right:0.3333333333333333em;"></span><span class="mord">9</span><span class="mord">9</span><span class="mord">8</span><span class="mord">2</span><span class="mord">4</span><span class="mord">4</span><span class="mord">3</span><span class="mord">5</span><span class="mord">3</span><span class="mclose">)</span></span></span></span> 的值。</p>
+<p>数据范围：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo separator="true">,</mo><mi>c</mi><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>9</mn></msup></mrow><annotation encoding="application/x-tex">1\leq a,b,c\leq10^9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">c</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span></span></span></span></p>
+<p>简单的提取公因式可得原式等价于求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>a</mi></msubsup><mi>i</mi><msubsup><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>b</mi></msubsup><mi>j</mi><msubsup><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>c</mi></msubsup><mi>k</mi></mrow><annotation encoding="application/x-tex">\sum\limits_{i=1}^{a}i\sum\limits_{j=1}^{b}j\sum\limits_{k=1}^{c}k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.64989em;vertical-align:-1.113777em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3513970000000004em;"><span style="top:-2.122331em;margin-left:0em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.0000050000000003em;"><span class="pstrut" style="height:3em;"></span><span><span class="mop op-symbol small-op">∑</span></span></span><span style="top:-3.950005em;margin-left:0em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">a</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9776689999999999em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.5361130000000003em;"><span style="top:-2.122331em;margin-left:0em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.0000050000000003em;"><span class="pstrut" style="height:3em;"></span><span><span class="mop op-symbol small-op">∑</span></span></span><span style="top:-3.950005em;margin-left:0em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">b</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.113777em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.351397em;"><span style="top:-2.097887em;margin-left:0em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.000005em;"><span class="pstrut" style="height:3em;"></span><span><span class="mop op-symbol small-op">∑</span></span></span><span style="top:-3.950005em;margin-left:0em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">c</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.002113em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 。</p>
+
+                
+              <p>
+            
+          
+        
+        
+        <div class="post-button text-center">
+          <a class="btn language" data-lan="read-more" href="https://parallelist-c.github.io/post/atcoder-regular-contest-107-ti-jie/" rel="contents">
+            阅读全文 »
+          </a>
+        </div>
+        
+      </div>
+      
+    </div>
+  </article>
+
   <article class="post-list-box  post box-shadow-wrapper">
     <div class="article-wrapper bg-color">
       <section class="post-header">
@@ -782,6 +870,166 @@
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://parallelist-c.github.io/post/noi2018-ni-de-ming-zi/"" data-c="
+          &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;给定字符串 s 。有 q 个询问，每个询问形如 t l r ，表示查询字符串 t 中有多少个本质不同的子串在 s[l:r] 中&lt;strong&gt;没&lt;/strong&gt;出现过。&lt;br&gt;
+&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;∣&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;∣&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;∣&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;∣&lt;/mi&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;msup&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;q,|s|,|t|\leq 5\times 10^5&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;q&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;∣&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;∣&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;∣&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;∣&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;≤&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.72777em;vertical-align:-0.08333em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;×&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8141079999999999em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.8141079999999999em;&#34;&gt;&lt;span style=&#34;top:-3.063em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;5&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&#34;solution&#34;&gt;Solution&lt;/h2&gt;
+&lt;p&gt;将问题拆为两个部分：&lt;br&gt;
+（1）t 中本质不同的子串&lt;br&gt;
+（2）在 s[l:r] 中没出现过的子串&lt;/p&gt;
+&lt;p&gt;去重的第一想法是对于两个在 t 串中完全相同的子串，仅在第一次出现位置计算贡献。这个想法往往会因为难以找到判断是否是第一次出现而被摒弃。但是，在此题中这个想法是实用的。去重的工作可以由 SAM 实现，找到第一次出现的位置也可以通过在 parent 树上上传标记实现。&lt;br&gt;
+子串可以视作原串一段前缀的后缀。对于一个串，我们不仅找到其第一次出现位置，更加具体地，我们把它的贡献计算在第一次出现位置的末尾位置上，也就是算作 t[1:i] 这段前缀的贡献。&lt;br&gt;
+此时有一个重要结论：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;若 j 为最大的满足 t[j:i] 的贡献计入 t[1:i] 这段前缀的贡献的位置，那么 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;∀&lt;/mi&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;mo&gt;∈&lt;/mo&gt;&lt;mo&gt;[&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;j&lt;/mi&gt;&lt;mo&gt;]&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\forall k\in [1,j]&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.73354em;vertical-align:-0.0391em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;∀&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03148em;&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;∈&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.05724em;&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; ，t[k:i] 的贡献均计入 t[1:i] 这段前缀中。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;也就是满足 t[j:i] 在 t[1:i] 造成贡献的 j 一定是从 1 开始连续的一段。毕竟如果存在一个位置 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo&gt;∈&lt;/mo&gt;&lt;mo&gt;[&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;:&lt;/mo&gt;&lt;mi&gt;j&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;p(p\in[1:j))&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;∈&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.05724em;&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 的贡献计入别处 t[1:k] 的话，就说明 k 一定小于 i 。那么 t[p:i] 的所有子串都可以计入 t[1:k] 上。于是假设不成立，结论正确。&lt;br&gt;
+有了上述结论，我们只需要对于 t 的每个位置 i ，记录最大的 j 满足 t[i:j] 的贡献计入 i 的 j 就行了。&lt;/p&gt;
+&lt;p&gt;接着考虑如何找在 s[l:r] 中没出现过的子串。对 s 建 SAM ，并利用可持久化版的线段树合并维护 SAM 上每个节点的 endpos 集合。此时，我们已经可以判定某个长度为 len 的串是否在 s[l:r] 中出现了——找到对应的节点，并在该点的线段树上查询 [l+len-1,r] 内是否有一个 endpos 。&lt;br&gt;
+用 t 串来匹配 s 串。固定右端点 R ，找到最远的，满足 t[L:R] 在 s 中出现过的 L 。于是可以发现对于固定的右端点 R 而言，不满足 t[L:R] 在 s 中出现过的 L 恰好也是一段前缀！也就是说，如果我们能找到这个 L ，那么就只需要与上面计入贡献的那个 j 取 min 就行了。&lt;br&gt;
+怎么在 SAM 上匹配字符串呢？考虑跳 link 边本质上是丢弃一段已匹配的前缀。当现有的前缀无法满足加入第 R+1 个字母的需求时，我们不妨丢弃一段前缀，剩下的后缀更加灵活，更有可能允许加入第 R+1 个字符。故我们能接就接，不能接就跳 link 。需要注意的是，本题中的匹配只允许在 s[l:r] 中找，当这个区间中没有转移后的字符串时，我们也必须再跳 link 。&lt;/p&gt;
+&lt;p&gt;有一个小细节：尽管我在叙述时用的是跳 link ，但实际并非如此。 SAM 上的一个节点维护了若干个字符串，也许当丢弃了一段前缀后的字符串仍然在该节点中，此时无需跳 link 边。务必要小心。&lt;/p&gt;
+&lt;p&gt;对于一个 R ，前后两次求出来的 L 取 min 即为该位置上的答案。&lt;/p&gt;
+&lt;p&gt;时间复杂度 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi mathvariant=&#34;script&#34;&gt;O&lt;/mi&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;∣&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;∣&lt;/mi&gt;&lt;msub&gt;&lt;mi&gt;log&lt;/mi&gt;&lt;mo&gt;⁡&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msub&gt;&lt;mrow&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;∣&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;∣&lt;/mi&gt;&lt;/mrow&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\mathcal{O}(|s|\log_2{|s|})&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathcal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;O&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;∣&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;∣&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mop&#34;&gt;&lt;span class=&#34;mop&#34;&gt;lo&lt;span style=&#34;margin-right:0.01389em;&#34;&gt;g&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.20696799999999996em;&#34;&gt;&lt;span style=&#34;top:-2.4558600000000004em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.24414em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord&#34;&gt;∣&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;∣&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 。&lt;/p&gt;
+&lt;h2 id=&#34;code&#34;&gt;Code&lt;/h2&gt;
+&lt;p&gt;实现的有点丑陋... 第一次写码农字符串题🤢...&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;const int N=1e6+5;
+using namespace std;
+namespace SEG{
+#define mid (l+r&amp;gt;&amp;gt;1)
+#define ls c[p][0],l,mid
+#define rs c[p][1],mid+1,r
+    int tot;
+    int t[N&amp;lt;&amp;lt;5],c[N&amp;lt;&amp;lt;5][2];
+    void modify(int &amp;amp;p,int l,int r,int pos){
+        p=++tot;t[p]=1;
+        if(l==r) return void();
+        if(pos&amp;lt;=mid) modify(ls,pos);
+        else modify(rs,pos);
+    }
+    void merge(int &amp;amp;p,int x,int l,int r){
+        if(p==0||x==0) return p=x+p,void();
+        int cur=++tot;
+        t[cur]=t[p]+t[x],c[cur][0]=c[p][0],c[cur][1]=c[p][1];
+        p=cur;
+        if(l==r) return;
+        merge(c[p][0],c[x][0],l,mid);
+        merge(c[p][1],c[x][1],mid+1,r);
+    }
+    int query(int p,int l,int r,int nl,int nr){
+        if(l&amp;gt;=nl&amp;amp;&amp;amp;r&amp;lt;=nr) return t[p];
+        int ret=0;
+        if(mid&amp;gt;=nl) ret+=query(ls,nl,nr);
+        if(mid&amp;lt; nr) ret+=query(rs,nl,nr);
+        return ret; 
+    }
+    void print(int p,int l,int r){
+        if(l==r) printf(&amp;quot;%d &amp;quot;,l);
+        if(t[c[p][0]]) print(ls);
+        if(t[c[p][1]]) print(rs);
+    }
+}
+namespace SAM1{
+    int t[N],A[N],rk[N],rt[N];
+    int las,tot,len;
+    struct SAM{
+        int l,link,c[26];
+    }a[N];
+    void insert(int k,int i){
+        int p=las,cur=las=++tot;SEG::modify(rt[cur],1,len,i);
+        a[cur].l=a[p].l+1;
+        while(p&amp;amp;&amp;amp;!a[p].c[k]) a[p].c[k]=cur,p=a[p].link;
+        if(p==0) return a[cur].link=1,void();
+        int q=a[p].c[k];
+        if(a[q].l==a[p].l+1) return a[cur].link=q,void();
+        int now=++tot;
+        a[now]=a[q];a[now].l=a[p].l+1,a[cur].link=a[q].link=now;
+        while(p&amp;amp;&amp;amp;a[p].c[k]==q) a[p].c[k]=now,p=a[p].link;
+    }
+    void basesort(){
+        for(int i=1;i&amp;lt;=tot;++i) ++t[a[i].l];
+        for(int i=1;i&amp;lt;=len;++i) t[i]+=t[i-1];
+        for(int i=1;i&amp;lt;=tot;++i) rk[t[a[i].l]--]=i;
+    }
+    void solve(char *s){
+        las=tot=1;
+        len=strlen(s+1);
+        for(int i=1;i&amp;lt;=len;++i)
+            insert(s[i]-&#39;a&#39;,i);
+        basesort();
+        for(int i=tot;i&amp;gt;=2;--i){
+            int u=rk[i];
+            SEG::merge(rt[a[u].link],rt[u],1,len);
+        }
+    }
+    void match(char *s,int l,int r){
+        int leng=strlen(s+1),L=1,R=0;
+        for(int i=1,u=1;i&amp;lt;=leng;++i){
+            while((L&amp;lt;=R)&amp;amp;&amp;amp;!SEG::query(rt[a[u].c[s[i]-&#39;a&#39;]],1,len,l+(R-L+1),r)){
+                ++L;
+                if(a[u].link&amp;amp;&amp;amp;a[a[u].link].l&amp;gt;=R-L+1)
+                    u=a[u].link;
+            }
+            if(SEG::query(rt[a[u].c[s[i]-&#39;a&#39;]],1,len,l+(R-L+1),r)) 
+                u=a[u].c[s[i]-&#39;a&#39;];
+            else ++L;
+            A[++R]=L-1;
+        }
+    }
+}
+namespace SAM2{
+    int t[N],B[N],rk[N],pos[N];
+    int las,tot,len;
+    struct SAM{
+        int l,link,c[26];
+    }a[N];
+    void reset (int p){
+        memset(a[p].c,0,sizeof a[p].c);
+        a[p].link=a[p].l=0;
+    }
+    void insert(int k){
+        int p=las,cur=las=++tot;reset(tot);
+        a[cur].l=a[p].l+1;
+        while(p&amp;amp;&amp;amp;!a[p].c[k]) a[p].c[k]=cur,p=a[p].link;
+        if(p==0) return a[cur].link=1,void();
+        int q=a[p].c[k];
+        if(a[q].l==a[p].l+1) return a[cur].link=q,void();
+        int now=++tot;reset(tot);
+        a[now]=a[q];a[now].l=a[p].l+1,a[cur].link=a[q].link=now;
+        while(p&amp;amp;&amp;amp;a[p].c[k]==q) a[p].c[k]=now,p=a[p].link;
+    }
+    void basesort(){
+        for(int i=1;i&amp;lt;=tot;++i) ++t[a[i].l];
+        for(int i=1;i&amp;lt;=len;++i) t[i]+=t[i-1];
+        for(int i=1;i&amp;lt;=tot;++i) rk[t[a[i].l]--]=i;
+        for(int i=1;i&amp;lt;=tot;++i) t[a[i].l]=0; 
+    }
+    void solve(char *s){
+        las=tot=1;reset(1);
+        len=strlen(s+1);
+        for(int i=1;i&amp;lt;=len;++i)
+            insert(s[i]-=&#39;a&#39;);
+        for(int i=1;i&amp;lt;=tot;++i) pos[i]=0x3f3f3f3f;
+        for(int i=1,u=1;i&amp;lt;=len;++i){
+            u=a[u].c[int(s[i])];
+            pos[u]=i;
+            B[i]=0x3f3f3f3f;
+        }
+        basesort();
+        for(int i=tot,u=rk[i];i&amp;gt;=1;--i,u=rk[i])
+            pos[a[u].link]=min(pos[a[u].link],pos[u]);
+        for(int i=1,u=rk[i];i&amp;lt;=tot;++i,u=rk[i])
+            B[pos[u]]=min(B[pos[u]],a[a[u].link].l);
+        for(int i=1;i&amp;lt;=len;++i)
+            B[i]=i-B[i];
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+">[NOI2018]你的名字 解题报告</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://parallelist-c.github.io/post/cf526d-om-nom-and-necklace-jie-ti-bao-gao/"" data-c="
@@ -2144,8 +2392,10 @@ x^{\overline{n}}=\sum_{i=0}^{n}\begin{bmatrix}n\\i\end{bmatrix}x^i
 &lt;p&gt;坐标 HN ，现在就读于 长沙市第一中学 。&lt;br&gt;
 平平无奇的共产主义接班人。&lt;/p&gt;
 &lt;h2 id=&#34;兴趣爱好&#34;&gt;⛹ 兴趣爱好&lt;/h2&gt;
-&lt;p&gt;bilibili 看番 wallhaven 看图 线下打球🏀&lt;br&gt;
-主要看甜甜恋爱番😍 如果有推荐请速联系我 ！感激不尽 🍻！&lt;/p&gt;
+&lt;p&gt;最大的兴趣爱好当然是 OI 啦。&lt;br&gt;
+bilibili 看番看鬼畜 wallhaven 看图 线下打球🏀&lt;br&gt;
+主要看甜度超标的恋爱番😍 如果有推荐请速联系我 ！感激不尽 🍻！&lt;br&gt;
+荣耀手残党，经常性闪现罚站反向开大。&lt;/p&gt;
 &lt;h2 id=&#34;联系我呀&#34;&gt;📬 联系我呀&lt;/h2&gt;
 &lt;p&gt;平常主要使用 QQ ：2955726400 。添加时请备注好 OIer 。&lt;/p&gt;
 ">关于</a>

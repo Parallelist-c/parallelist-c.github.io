@@ -8,7 +8,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="浅い夢だから 胸をはなれない">
 <meta name="theme-color" content="#000">
-<title>关于 | Parallelist</title>
+<title>[NOI2018]你的名字 解题报告 | Parallelist</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1609850217035">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -38,8 +38,8 @@
 
 
 
-  <meta name="description" content="关于" />
-  <meta name="keywords" content="" />
+  <meta name="description" content="[NOI2018]你的名字 解题报告" />
+  <meta name="keywords" content="SAM" />
 </head>
 
 <body>
@@ -273,10 +273,9 @@
     <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li><a href="#%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99">🏠 关于本站</a></li>
-<li><a href="#%E5%8D%9A%E4%B8%BB%E6%98%AF%E8%B0%81">👨‍💻 博主是谁</a></li>
-<li><a href="#%E5%85%B4%E8%B6%A3%E7%88%B1%E5%A5%BD">⛹ 兴趣爱好</a></li>
-<li><a href="#%E8%81%94%E7%B3%BB%E6%88%91%E5%91%80">📬 联系我呀</a></li>
+<li><a href="#description">Description</a></li>
+<li><a href="#solution">Solution</a></li>
+<li><a href="#code">Code</a></li>
 </ul>
 </li>
 </ul>
@@ -544,8 +543,8 @@
           <div class="section bg-color post post-page">
             <section class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://parallelist-c.github.io/post/about/">
-      关于
+    <a class="post-title-link" href="https://parallelist-c.github.io/post/noi2018-ni-de-ming-zi/">
+      [NOI2018]你的名字 解题报告
     </a>
   </h1>
   <div class="post-meta">
@@ -553,23 +552,36 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2019-01-25 19:09:48">2019-01-25</span>
+      <span class="publish-time" data-t="2021-01-05 17:36:49">2021-01-05</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
     <span class="meta-item">
+      <i class="fa fa-folder-o"></i>
+      <span class="pc-show language" data-lan="category-in">分类于</span>
+      
+      
+      <a href="https://parallelist-c.github.io/tag/r_wtdTGui/">
+        <span>SAM</span>
+      </a>
+      
+      
+    </span>
+    <span class="post-meta-divider">|</span>
+    
+    <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>1<span class="language" data-lan="minute">分钟</span></span>
+      <span>10<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>215<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>1868<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
     
     
-    <span id="/post/about/" data-flag-title="关于" class="meta-item pc-show leancloud_visitors">
+    <span id="/post/noi2018-ni-de-ming-zi/" data-flag-title="[NOI2018]你的名字 解题报告" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span><span class="language" data-lan="view">浏览量</span>：<span class="leancloud-visitors-count"></span></span>
@@ -578,27 +590,198 @@
   </div>
 </section>
             <div class="post-body next-md-body" id="post_body">
-              <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
+              <h2 id="description">Description</h2>
+<p>给定字符串 s 。有 q 个询问，每个询问形如 t l r ，表示查询字符串 t 中有多少个本质不同的子串在 s[l:r] 中<strong>没</strong>出现过。<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi><mo separator="true">,</mo><mi mathvariant="normal">∣</mi><mi>s</mi><mi mathvariant="normal">∣</mi><mo separator="true">,</mo><mi mathvariant="normal">∣</mi><mi>t</mi><mi mathvariant="normal">∣</mi><mo>≤</mo><mn>5</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">q,|s|,|t|\leq 5\times 10^5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">∣</span><span class="mord mathdefault">s</span><span class="mord">∣</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">∣</span><span class="mord mathdefault">t</span><span class="mord">∣</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span></p>
+<h2 id="solution">Solution</h2>
+<p>将问题拆为两个部分：<br>
+（1）t 中本质不同的子串<br>
+（2）在 s[l:r] 中没出现过的子串</p>
+<p>去重的第一想法是对于两个在 t 串中完全相同的子串，仅在第一次出现位置计算贡献。这个想法往往会因为难以找到判断是否是第一次出现而被摒弃。但是，在此题中这个想法是实用的。去重的工作可以由 SAM 实现，找到第一次出现的位置也可以通过在 parent 树上上传标记实现。<br>
+子串可以视作原串一段前缀的后缀。对于一个串，我们不仅找到其第一次出现位置，更加具体地，我们把它的贡献计算在第一次出现位置的末尾位置上，也就是算作 t[1:i] 这段前缀的贡献。<br>
+此时有一个重要结论：</p>
+<blockquote>
+<p>若 j 为最大的满足 t[j:i] 的贡献计入 t[1:i] 这段前缀的贡献的位置，那么 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∀</mi><mi>k</mi><mo>∈</mo><mo>[</mo><mn>1</mn><mo separator="true">,</mo><mi>j</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">\forall k\in [1,j]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.73354em;vertical-align:-0.0391em;"></span><span class="mord">∀</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mclose">]</span></span></span></span> ，t[k:i] 的贡献均计入 t[1:i] 这段前缀中。</p>
 </blockquote>
-<h2 id="关于本站">🏠 关于本站</h2>
-<p>OIer 的博客。<br>
-博客主要的话还是以学习笔记、解题报告为主啦，但有时也会放点心得，或者一些有趣的东西 🌈。<br>
-不定期推番推歌推软件 ~<br>
-欢迎来玩 ~ 欢迎评论 ~ 博客中有错误的地方请及时指出哦💝。</p>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<p>坐标 HN ，现在就读于 长沙市第一中学 。<br>
-平平无奇的共产主义接班人。</p>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<p>最大的兴趣爱好当然是 OI 啦。<br>
-bilibili 看番看鬼畜 wallhaven 看图 线下打球🏀<br>
-主要看甜度超标的恋爱番😍 如果有推荐请速联系我 ！感激不尽 🍻！<br>
-荣耀手残党，经常性闪现罚站反向开大。</p>
-<h2 id="联系我呀">📬 联系我呀</h2>
-<p>平常主要使用 QQ ：2955726400 。添加时请备注好 OIer 。</p>
+<p>也就是满足 t[j:i] 在 t[1:i] 造成贡献的 j 一定是从 1 开始连续的一段。毕竟如果存在一个位置 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>(</mo><mi>p</mi><mo>∈</mo><mo>[</mo><mn>1</mn><mo>:</mo><mi>j</mi><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">p(p\in[1:j))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">p</span><span class="mopen">(</span><span class="mord mathdefault">p</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span> 的贡献计入别处 t[1:k] 的话，就说明 k 一定小于 i 。那么 t[p:i] 的所有子串都可以计入 t[1:k] 上。于是假设不成立，结论正确。<br>
+有了上述结论，我们只需要对于 t 的每个位置 i ，记录最大的 j 满足 t[i:j] 的贡献计入 i 的 j 就行了。</p>
+<p>接着考虑如何找在 s[l:r] 中没出现过的子串。对 s 建 SAM ，并利用可持久化版的线段树合并维护 SAM 上每个节点的 endpos 集合。此时，我们已经可以判定某个长度为 len 的串是否在 s[l:r] 中出现了——找到对应的节点，并在该点的线段树上查询 [l+len-1,r] 内是否有一个 endpos 。<br>
+用 t 串来匹配 s 串。固定右端点 R ，找到最远的，满足 t[L:R] 在 s 中出现过的 L 。于是可以发现对于固定的右端点 R 而言，不满足 t[L:R] 在 s 中出现过的 L 恰好也是一段前缀！也就是说，如果我们能找到这个 L ，那么就只需要与上面计入贡献的那个 j 取 min 就行了。<br>
+怎么在 SAM 上匹配字符串呢？考虑跳 link 边本质上是丢弃一段已匹配的前缀。当现有的前缀无法满足加入第 R+1 个字母的需求时，我们不妨丢弃一段前缀，剩下的后缀更加灵活，更有可能允许加入第 R+1 个字符。故我们能接就接，不能接就跳 link 。需要注意的是，本题中的匹配只允许在 s[l:r] 中找，当这个区间中没有转移后的字符串时，我们也必须再跳 link 。</p>
+<p>有一个小细节：尽管我在叙述时用的是跳 link ，但实际并非如此。 SAM 上的一个节点维护了若干个字符串，也许当丢弃了一段前缀后的字符串仍然在该节点中，此时无需跳 link 边。务必要小心。</p>
+<p>对于一个 R ，前后两次求出来的 L 取 min 即为该位置上的答案。</p>
+<p>时间复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="script">O</mi><mo>(</mo><mi mathvariant="normal">∣</mi><mi>s</mi><mi mathvariant="normal">∣</mi><msub><mi>log</mi><mo>⁡</mo><mn>2</mn></msub><mrow><mi mathvariant="normal">∣</mi><mi>s</mi><mi mathvariant="normal">∣</mi></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal{O}(|s|\log_2{|s|})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathcal" style="margin-right:0.02778em;">O</span></span><span class="mopen">(</span><span class="mord">∣</span><span class="mord mathdefault">s</span><span class="mord">∣</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.20696799999999996em;"><span style="top:-2.4558600000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.24414em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord">∣</span><span class="mord mathdefault">s</span><span class="mord">∣</span></span><span class="mclose">)</span></span></span></span> 。</p>
+<h2 id="code">Code</h2>
+<p>实现的有点丑陋... 第一次写码农字符串题🤢...</p>
+<pre><code class="language-cpp">const int N=1e6+5;
+using namespace std;
+namespace SEG{
+#define mid (l+r&gt;&gt;1)
+#define ls c[p][0],l,mid
+#define rs c[p][1],mid+1,r
+    int tot;
+    int t[N&lt;&lt;5],c[N&lt;&lt;5][2];
+    void modify(int &amp;p,int l,int r,int pos){
+        p=++tot;t[p]=1;
+        if(l==r) return void();
+        if(pos&lt;=mid) modify(ls,pos);
+        else modify(rs,pos);
+    }
+    void merge(int &amp;p,int x,int l,int r){
+        if(p==0||x==0) return p=x+p,void();
+        int cur=++tot;
+        t[cur]=t[p]+t[x],c[cur][0]=c[p][0],c[cur][1]=c[p][1];
+        p=cur;
+        if(l==r) return;
+        merge(c[p][0],c[x][0],l,mid);
+        merge(c[p][1],c[x][1],mid+1,r);
+    }
+    int query(int p,int l,int r,int nl,int nr){
+        if(l&gt;=nl&amp;&amp;r&lt;=nr) return t[p];
+        int ret=0;
+        if(mid&gt;=nl) ret+=query(ls,nl,nr);
+        if(mid&lt; nr) ret+=query(rs,nl,nr);
+        return ret; 
+    }
+    void print(int p,int l,int r){
+        if(l==r) printf(&quot;%d &quot;,l);
+        if(t[c[p][0]]) print(ls);
+        if(t[c[p][1]]) print(rs);
+    }
+}
+namespace SAM1{
+    int t[N],A[N],rk[N],rt[N];
+    int las,tot,len;
+    struct SAM{
+        int l,link,c[26];
+    }a[N];
+    void insert(int k,int i){
+        int p=las,cur=las=++tot;SEG::modify(rt[cur],1,len,i);
+        a[cur].l=a[p].l+1;
+        while(p&amp;&amp;!a[p].c[k]) a[p].c[k]=cur,p=a[p].link;
+        if(p==0) return a[cur].link=1,void();
+        int q=a[p].c[k];
+        if(a[q].l==a[p].l+1) return a[cur].link=q,void();
+        int now=++tot;
+        a[now]=a[q];a[now].l=a[p].l+1,a[cur].link=a[q].link=now;
+        while(p&amp;&amp;a[p].c[k]==q) a[p].c[k]=now,p=a[p].link;
+    }
+    void basesort(){
+        for(int i=1;i&lt;=tot;++i) ++t[a[i].l];
+        for(int i=1;i&lt;=len;++i) t[i]+=t[i-1];
+        for(int i=1;i&lt;=tot;++i) rk[t[a[i].l]--]=i;
+    }
+    void solve(char *s){
+        las=tot=1;
+        len=strlen(s+1);
+        for(int i=1;i&lt;=len;++i)
+            insert(s[i]-'a',i);
+        basesort();
+        for(int i=tot;i&gt;=2;--i){
+            int u=rk[i];
+            SEG::merge(rt[a[u].link],rt[u],1,len);
+        }
+    }
+    void match(char *s,int l,int r){
+        int leng=strlen(s+1),L=1,R=0;
+        for(int i=1,u=1;i&lt;=leng;++i){
+            while((L&lt;=R)&amp;&amp;!SEG::query(rt[a[u].c[s[i]-'a']],1,len,l+(R-L+1),r)){
+                ++L;
+                if(a[u].link&amp;&amp;a[a[u].link].l&gt;=R-L+1)
+                    u=a[u].link;
+            }
+            if(SEG::query(rt[a[u].c[s[i]-'a']],1,len,l+(R-L+1),r)) 
+                u=a[u].c[s[i]-'a'];
+            else ++L;
+            A[++R]=L-1;
+        }
+    }
+}
+namespace SAM2{
+    int t[N],B[N],rk[N],pos[N];
+    int las,tot,len;
+    struct SAM{
+        int l,link,c[26];
+    }a[N];
+    void reset (int p){
+        memset(a[p].c,0,sizeof a[p].c);
+        a[p].link=a[p].l=0;
+    }
+    void insert(int k){
+        int p=las,cur=las=++tot;reset(tot);
+        a[cur].l=a[p].l+1;
+        while(p&amp;&amp;!a[p].c[k]) a[p].c[k]=cur,p=a[p].link;
+        if(p==0) return a[cur].link=1,void();
+        int q=a[p].c[k];
+        if(a[q].l==a[p].l+1) return a[cur].link=q,void();
+        int now=++tot;reset(tot);
+        a[now]=a[q];a[now].l=a[p].l+1,a[cur].link=a[q].link=now;
+        while(p&amp;&amp;a[p].c[k]==q) a[p].c[k]=now,p=a[p].link;
+    }
+    void basesort(){
+        for(int i=1;i&lt;=tot;++i) ++t[a[i].l];
+        for(int i=1;i&lt;=len;++i) t[i]+=t[i-1];
+        for(int i=1;i&lt;=tot;++i) rk[t[a[i].l]--]=i;
+        for(int i=1;i&lt;=tot;++i) t[a[i].l]=0; 
+    }
+    void solve(char *s){
+        las=tot=1;reset(1);
+        len=strlen(s+1);
+        for(int i=1;i&lt;=len;++i)
+            insert(s[i]-='a');
+        for(int i=1;i&lt;=tot;++i) pos[i]=0x3f3f3f3f;
+        for(int i=1,u=1;i&lt;=len;++i){
+            u=a[u].c[int(s[i])];
+            pos[u]=i;
+            B[i]=0x3f3f3f3f;
+        }
+        basesort();
+        for(int i=tot,u=rk[i];i&gt;=1;--i,u=rk[i])
+            pos[a[u].link]=min(pos[a[u].link],pos[u]);
+        for(int i=1,u=rk[i];i&lt;=tot;++i,u=rk[i])
+            B[pos[u]]=min(B[pos[u]],a[a[u].link].l);
+        for(int i=1;i&lt;=len;++i)
+            B[i]=i-B[i];
+    }
+}
+</code></pre>
 
             </div>
             
+            
+              <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong class="language" data-lan="author">本文作者：</strong>
+      Parallelist
+    </li>
+    <li class="post-copyright-link">
+      <strong class="language" data-lan="link">本文链接：</strong>
+      <a href="https://parallelist-c.github.io/post/noi2018-ni-de-ming-zi/" title="[NOI2018]你的名字 解题报告">https://parallelist-c.github.io/post/noi2018-ni-de-ming-zi/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong class="language" data-lan="copyright">版权声明： </strong>
+      本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i> BY-NC-SA</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+  <div class="tags">
+    
+      <a href="https://parallelist-c.github.io/tag/r_wtdTGui/"># SAM</a>
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
+      
+    </div>
+    <div class="nav-next">
+      
+        <a class="nav-pc-next" title="CF526D Om Nom and Necklace 解题报告" href="https://parallelist-c.github.io/post/cf526d-om-nom-and-necklace-jie-ti-bao-gao/">CF526D Om Nom and Necklace 解题报告</a>
+        <a class="nav-mobile-next" title="CF526D Om Nom and Necklace 解题报告" href="https://parallelist-c.github.io/post/cf526d-om-nom-and-necklace-jie-ti-bao-gao/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
+      
+    </div>
+  </div>
+</div>
             
             
   
