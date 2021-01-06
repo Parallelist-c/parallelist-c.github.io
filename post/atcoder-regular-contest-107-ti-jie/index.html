@@ -9,7 +9,7 @@
 <meta name="description" content="浅い夢だから 胸をはなれない">
 <meta name="theme-color" content="#000">
 <title>Atcoder Regular Contest 107 题解 | Parallelist</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1609856978647">
+<link rel="shortcut icon" href="/favicon.ico?v=1609934384523">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -211,7 +211,7 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">14</span>
+        <span class="site-item-stat-count">15</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
@@ -1306,6 +1306,114 @@ int main(){
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://parallelist-c.github.io/post/shoi2014san-cha-shen-jing-shu-jie-ti-bao-gao/"" data-c="
+          &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;给定一棵以 1 为根的有 3*n+1 个节点的树，树上每个节点均有一个输出端。树上有 n 个节点有 3 个子节点，其余的 2*n+1 个节点无子节点（也就是叶子）。2*n+1 个节点的初始值均为 0/1 ，并且已经提前知道；剩余 n 个节点的值为其 3 个子节点中出现次数最多的值。q 次询问，每次改变一个叶子节点的值，求操作后根节点的值。&lt;br&gt;
+&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;msup&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;n,q\leq 5\times 10^5&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8304100000000001em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;q&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;≤&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.72777em;vertical-align:-0.08333em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;×&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8141079999999999em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.8141079999999999em;&#34;&gt;&lt;span style=&#34;top:-3.063em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;5&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&#34;solution&#34;&gt;Solution&lt;/h2&gt;
+&lt;p&gt;可以发现每次修改必定是修改一条自底向上的链。并且这条链有一些比较明显的性质：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;链上的点必定修改成同一值&lt;/li&gt;
+&lt;li&gt;u 改变时 fa[u] 也改变，当且仅当 fa[u] 的另外两个子节点的值恰好一个 1 一个 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;但是如何快速查询修改链的顶端节点以及修改链上的点值呢？&lt;br&gt;
+不妨再深入找找性质。&lt;br&gt;
+当叶子节点 u 从 0 变为 1 时，若其父节点 v 目前的子节点权值和为 1 ，那么父节点将会由 0 变为 1 ，继续上传；否则就此打住。同理， v 能够再影响到 v 的父节点 k 当且仅当 k 的目前的子节点权值和为 1 。当叶子节点从 1 变为 0 的情况也是类似的，只不过是要求目前的子节点权值和为 2 。&lt;br&gt;
+问题至此就水落石出了。我们将那 n 个节点按照子节点的权值和分为 4 类，分别为 0-3 。&lt;br&gt;
+链上的查询只会在碰到深度最深的非 1/2 类节点时停下来，于是我们在 LCT 上维护下这个东西就行了。&lt;br&gt;
+发现链上修改就是区间 +1/-1 ，直接打标记也可以做。&lt;/p&gt;
+&lt;p&gt;复杂度 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi mathvariant=&#34;script&#34;&gt;O&lt;/mi&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;msub&gt;&lt;mi&gt;log&lt;/mi&gt;&lt;mo&gt;⁡&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msub&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\mathcal{O}(q\log_2{n})&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathcal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;O&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;q&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mop&#34;&gt;&lt;span class=&#34;mop&#34;&gt;lo&lt;span style=&#34;margin-right:0.01389em;&#34;&gt;g&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.20696799999999996em;&#34;&gt;&lt;span style=&#34;top:-2.4558600000000004em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.24414em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 。&lt;br&gt;
+这道题当然也可以不用 LCT 而是用树链剖分。事实上，这只是用线段树维护链还是用 Splay 维护链的问题。而由于树链剖分时首先需要把链剖成 log 段，故在本题中，树链剖分的复杂度不如 LCT 。&lt;/p&gt;
+&lt;h2 id=&#34;code&#34;&gt;Code&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;const int N=2e6+5;
+using namespace std;
+int n,q;
+vector&amp;lt;int&amp;gt;child[N];
+namespace LCT{
+#define lc(x) c[x][0]
+#define rc(x) c[x][1]
+    int v[N],fa[N],one[N],two[N],tag[N],c[N][2];
+    bool isrt(int x){
+        return fa[x]==0 || (lc(fa[x])!=x&amp;amp;&amp;amp;rc(fa[x])!=x);
+    }
+    void update(int x){
+        if(one[rc(x)]) one[x]=one[rc(x)];
+        else if(v[x]^1) one[x]=x;
+        else one[x]=one[lc(x)];
+        if(two[rc(x)]) two[x]=two[rc(x)];
+        else if(v[x]^2) two[x]=x;
+        else two[x]=two[lc(x)];
+    }
+    void pushmk(int x,int d){
+        tag[x]+=d;swap(one[x],two[x]);v[x]^=3;
+    }
+    void pushdn(int x){
+        pushmk(lc(x),tag[x]);
+        pushmk(rc(x),tag[x]);
+        tag[x]=0;
+    }
+    void rotate(int x){
+        int y=fa[x],z=fa[y],t=rc(y)==x;
+        if(!isrt(y)) c[z][rc(z)==y]=x;fa[x]=z;
+        c[y][t]=c[x][t^1];fa[c[x][t^1]]=y;
+        c[x][t^1]=y;fa[y]=x;
+        update(y),update(x);
+    }
+    void pushall(int x){
+        if(!isrt(x)) pushall(fa[x]);
+        if(tag[x]) pushdn(x);
+    }
+    void splay(int x){
+        pushall(x);
+        while(!isrt(x)){
+            int y=fa[x],z=fa[y];
+            if(!isrt(y))
+                ((rc(y)==x)^(rc(z)==y))?rotate(x):rotate(y);
+            rotate(x);
+        }
+        update(x);
+    }
+    void access(int x){
+        int times=0;
+        for(int i=0;x;x=fa[i=x])
+            splay(x),rc(x)=i,update(x),++times;
+    }
+}
+using namespace LCT;
+void DFS(int p){
+    for(auto u:child[p])
+        DFS(u),v[p]+=(v[u]&amp;gt;&amp;gt;1);
+    if(p&amp;lt;=n) update(p);
+}
+int main(){
+    
+    r(n);
+    for(int i=1;i&amp;lt;=n;++i)
+    for(int j=1,x;j&amp;lt;=3;++j)
+        r(x),child[i].push_back(x),fa[x]=i;
+    for(int i=n+1;i&amp;lt;=3*n+1;++i)
+        r(v[i]),v[i]&amp;lt;&amp;lt;=1;
+    DFS(1);
+    r(q);int ans=v[1]&amp;gt;&amp;gt;1;
+    for(int i=1,x;i&amp;lt;=q;++i){
+        r(x);
+        int tp=(v[x]^=2)-1;
+        access(x=fa[x]);splay(x);
+        if((~tp?one:two)[x]){ // -1:1to0 1:0to1
+            x=(~tp?one:two)[x];
+            splay(x);pushmk(rc(x),tp);update(rc(x));
+            v[x]+=tp;update(x);
+        }
+        else pushmk(x,tp),update(x),ans^=1;
+        w(ans);
+    }
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+">[SHOI2014]三叉神经树 解题报告</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://parallelist-c.github.io/post/noi2018-ni-de-ming-zi/"" data-c="

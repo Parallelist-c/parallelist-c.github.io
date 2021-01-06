@@ -8,7 +8,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="浅い夢だから 胸をはなれない">
 <meta name="theme-color" content="#000">
-<title>Query on a tree VI 解题报告 | Parallelist</title>
+<title>[SHOI2014]三叉神经树 解题报告 | Parallelist</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1609934384523">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -38,7 +38,7 @@
 
 
 
-  <meta name="description" content="Query on a tree VI 解题报告" />
+  <meta name="description" content="[SHOI2014]三叉神经树 解题报告" />
   <meta name="keywords" content="LCT" />
 </head>
 
@@ -543,8 +543,8 @@
           <div class="section bg-color post post-page">
             <section class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://parallelist-c.github.io/post/query-on-a-tree-vi-jie-ti-bao-gao/">
-      Query on a tree VI 解题报告
+    <a class="post-title-link" href="https://parallelist-c.github.io/post/shoi2014san-cha-shen-jing-shu-jie-ti-bao-gao/">
+      [SHOI2014]三叉神经树 解题报告
     </a>
   </h1>
   <div class="post-meta">
@@ -552,7 +552,7 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2020-12-29 20:06:33">2020-12-29</span>
+      <span class="publish-time" data-t="2021-01-06 18:22:46">2021-01-06</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -571,17 +571,17 @@
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>4<span class="language" data-lan="minute">分钟</span></span>
+      <span>5<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>664<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>992<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
     
     
-    <span id="/post/query-on-a-tree-vi-jie-ti-bao-gao/" data-flag-title="Query on a tree VI 解题报告" class="meta-item pc-show leancloud_visitors">
+    <span id="/post/shoi2014san-cha-shen-jing-shu-jie-ti-bao-gao/" data-flag-title="[SHOI2014]三叉神经树 解题报告" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span><span class="language" data-lan="view">浏览量</span>：<span class="leancloud-visitors-count"></span></span>
@@ -591,66 +591,107 @@
 </section>
             <div class="post-body next-md-body" id="post_body">
               <h2 id="description">Description</h2>
-<p>给你一棵 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 个点的树，每个点为黑色或白色。要求维护两个操作：</p>
-<ul>
-<li>改变点 u 的颜色</li>
-<li>查询包含点 u 的同色连通块大小</li>
-</ul>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo separator="true">,</mo><mi>q</mi><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">n,q\leq 10^5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8304100000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span></p>
+<p>给定一棵以 1 为根的有 3*n+1 个节点的树，树上每个节点均有一个输出端。树上有 n 个节点有 3 个子节点，其余的 2*n+1 个节点无子节点（也就是叶子）。2*n+1 个节点的初始值均为 0/1 ，并且已经提前知道；剩余 n 个节点的值为其 3 个子节点中出现次数最多的值。q 次询问，每次改变一个叶子节点的值，求操作后根节点的值。<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo separator="true">,</mo><mi>q</mi><mo>≤</mo><mn>5</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">n,q\leq 5\times 10^5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8304100000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span></p>
 <h2 id="solution">Solution</h2>
-<p>动态维护连通块可以考虑 LCT 。但是当一个点颜色改变时如果我们枚举其所有出边来更改，复杂度爆炸。</p>
-<p>平常都是把边的信息放在点上，因为边数比点数少，信息一定不会有缺失；很少把点的信息放在边上。<br>
-实际上，点的信息也是可以放在边上的。对于非根节点，每个点的信息放在父边上；对于根节点，我们另开一个虚拟根节点与其连边用来存根节点的信息。</p>
-<p>具体于本题而言，我们建两棵 LCT ，分别代表黑/白色。在 LCT 中，我们只加入对应颜色的边。点 u 在颜色 c[u] 对应的 LCT 上的最远祖先一定是虚拟节点/异色节点，即 findroot(u) 后，根的重子树大小就是包含点 u 的同色连通块大小（因为 findroot 中 splay 了根节点）。根的重儿子必定是其右儿子。</p>
-<p>问题转化为维护 LCT 上 u 的子树大小，维护一个 vir[u] 表示连向 u 的所有轻链 size 即可。</p>
-<p>需要注意的是，在本题中，树的形态是固定的，也就是我们不能进行 makeroot 操作。但庆幸的是，经过上述分析后，我们可以发现 link 和 cut 操作都是恰好针对点 u 和其父节点来的，故仍然可以实现。</p>
+<p>可以发现每次修改必定是修改一条自底向上的链。并且这条链有一些比较明显的性质：</p>
+<ul>
+<li>链上的点必定修改成同一值</li>
+<li>u 改变时 fa[u] 也改变，当且仅当 fa[u] 的另外两个子节点的值恰好一个 1 一个 0</li>
+</ul>
+<p>但是如何快速查询修改链的顶端节点以及修改链上的点值呢？<br>
+不妨再深入找找性质。<br>
+当叶子节点 u 从 0 变为 1 时，若其父节点 v 目前的子节点权值和为 1 ，那么父节点将会由 0 变为 1 ，继续上传；否则就此打住。同理， v 能够再影响到 v 的父节点 k 当且仅当 k 的目前的子节点权值和为 1 。当叶子节点从 1 变为 0 的情况也是类似的，只不过是要求目前的子节点权值和为 2 。<br>
+问题至此就水落石出了。我们将那 n 个节点按照子节点的权值和分为 4 类，分别为 0-3 。<br>
+链上的查询只会在碰到深度最深的非 1/2 类节点时停下来，于是我们在 LCT 上维护下这个东西就行了。<br>
+发现链上修改就是区间 +1/-1 ，直接打标记也可以做。</p>
+<p>复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="script">O</mi><mo>(</mo><mi>q</mi><msub><mi>log</mi><mo>⁡</mo><mn>2</mn></msub><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal{O}(q\log_2{n})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathcal" style="margin-right:0.02778em;">O</span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.20696799999999996em;"><span style="top:-2.4558600000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.24414em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">n</span></span><span class="mclose">)</span></span></span></span> 。<br>
+这道题当然也可以不用 LCT 而是用树链剖分。事实上，这只是用线段树维护链还是用 Splay 维护链的问题。而由于树链剖分时首先需要把链剖成 log 段，故在本题中，树链剖分的复杂度不如 LCT 。</p>
 <h2 id="code">Code</h2>
-<pre><code class="language-cpp">struct LCT{
+<pre><code class="language-cpp">const int N=2e6+5;
+using namespace std;
+int n,q;
+vector&lt;int&gt;child[N];
+namespace LCT{
 #define lc(x) c[x][0]
 #define rc(x) c[x][1]
-    int sz[N],fa[N],vir[N],c[N][2];
-    LCT(){for(int i=1;i&lt;N;++i) sz[i]=1;}
-    inline void update(int x){
-        sz[x]=sz[lc(x)]+sz[rc(x)]+vir[x]+1;
-    }
-    inline bool isrt(int x){
+    int v[N],fa[N],one[N],two[N],tag[N],c[N][2];
+    bool isrt(int x){
         return fa[x]==0 || (lc(fa[x])!=x&amp;&amp;rc(fa[x])!=x);
     }
-    inline void rotate(int x){
+    void update(int x){
+        if(one[rc(x)]) one[x]=one[rc(x)];
+        else if(v[x]^1) one[x]=x;
+        else one[x]=one[lc(x)];
+        if(two[rc(x)]) two[x]=two[rc(x)];
+        else if(v[x]^2) two[x]=x;
+        else two[x]=two[lc(x)];
+    }
+    void pushmk(int x,int d){
+        tag[x]+=d;swap(one[x],two[x]);v[x]^=3;
+    }
+    void pushdn(int x){
+        pushmk(lc(x),tag[x]);
+        pushmk(rc(x),tag[x]);
+        tag[x]=0;
+    }
+    void rotate(int x){
         int y=fa[x],z=fa[y],t=rc(y)==x;
         if(!isrt(y)) c[z][rc(z)==y]=x;fa[x]=z;
         c[y][t]=c[x][t^1];fa[c[x][t^1]]=y;
         c[x][t^1]=y;fa[y]=x;
         update(y),update(x);
     }
+    void pushall(int x){
+        if(!isrt(x)) pushall(fa[x]);
+        if(tag[x]) pushdn(x);
+    }
     void splay(int x){
+        pushall(x);
         while(!isrt(x)){
             int y=fa[x],z=fa[y];
             if(!isrt(y))
                 ((rc(y)==x)^(rc(z)==y))?rotate(x):rotate(y);
             rotate(x);
         }
+        update(x);
     }
     void access(int x){
+        int times=0;
         for(int i=0;x;x=fa[i=x])
-            splay(x),vir[x]+=sz[rc(x)],rc(x)=i,vir[x]-=sz[i],update(x);
+            splay(x),rc(x)=i,update(x),++times;
     }
-    int findrt(int x){                          
-        access(x);splay(x);
-        while(lc(x)) 
-            x=lc(x);
-        splay(x);
-        return x;
+}
+using namespace LCT;
+void DFS(int p){
+    for(auto u:child[p])
+        DFS(u),v[p]+=(v[u]&gt;&gt;1);
+    if(p&lt;=n) update(p);
+}
+int main(){
+    
+    r(n);
+    for(int i=1;i&lt;=n;++i)
+    for(int j=1,x;j&lt;=3;++j)
+        r(x),child[i].push_back(x),fa[x]=i;
+    for(int i=n+1;i&lt;=3*n+1;++i)
+        r(v[i]),v[i]&lt;&lt;=1;
+    DFS(1);
+    r(q);int ans=v[1]&gt;&gt;1;
+    for(int i=1,x;i&lt;=q;++i){
+        r(x);
+        int tp=(v[x]^=2)-1;
+        access(x=fa[x]);splay(x);
+        if((~tp?one:two)[x]){ // -1:1to0 1:0to1
+            x=(~tp?one:two)[x];
+            splay(x);pushmk(rc(x),tp);update(rc(x));
+            v[x]+=tp;update(x);
+        }
+        else pushmk(x,tp),update(x),ans^=1;
+        w(ans);
     }
-    void link(int x,int y){
-        splay(x);fa[x]=y;
-        access(y),splay(y);
-        vir[y]+=sz[x];sz[y]+=sz[x];
-    }
-    void cut(int x,int y){
-        access(x),splay(x),lc(x)=fa[lc(x)]=0;update(x);
-    }
-}t[2];
+    return 0;
+}
 </code></pre>
 
             </div>
@@ -664,7 +705,7 @@
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://parallelist-c.github.io/post/query-on-a-tree-vi-jie-ti-bao-gao/" title="Query on a tree VI 解题报告">https://parallelist-c.github.io/post/query-on-a-tree-vi-jie-ti-bao-gao/</a>
+      <a href="https://parallelist-c.github.io/post/shoi2014san-cha-shen-jing-shu-jie-ti-bao-gao/" title="[SHOI2014]三叉神经树 解题报告">https://parallelist-c.github.io/post/shoi2014san-cha-shen-jing-shu-jie-ti-bao-gao/</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -679,15 +720,11 @@
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="PAM 学习笔记" href="https://parallelist-c.github.io/post/PAM-xue-xi-bi-ji/">PAM 学习笔记</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="PAM 学习笔记" href="https://parallelist-c.github.io/post/PAM-xue-xi-bi-ji/">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="[AHOI2005] 航线规划 解题报告" href="https://parallelist-c.github.io/post/ahoi2005-hang-xian-gui-hua/">[AHOI2005] 航线规划 解题报告</a>
-        <a class="nav-mobile-next" title="[AHOI2005] 航线规划 解题报告" href="https://parallelist-c.github.io/post/ahoi2005-hang-xian-gui-hua/">下一篇</a>
+        <a class="nav-pc-next" title="[NOI2018]你的名字 解题报告" href="https://parallelist-c.github.io/post/noi2018-ni-de-ming-zi/">[NOI2018]你的名字 解题报告</a>
+        <a class="nav-mobile-next" title="[NOI2018]你的名字 解题报告" href="https://parallelist-c.github.io/post/noi2018-ni-de-ming-zi/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>
