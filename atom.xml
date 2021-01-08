@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://parallelist-c.github.io</id>
     <title>Parallelist</title>
-    <updated>2021-01-07T10:39:59.547Z</updated>
+    <updated>2021-01-08T14:34:03.263Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://parallelist-c.github.io"/>
     <link rel="self" href="https://parallelist-c.github.io/atom.xml"/>
@@ -10,6 +10,235 @@
     <logo>https://parallelist-c.github.io/images/avatar.png</logo>
     <icon>https://parallelist-c.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Parallelist</rights>
+    <entry>
+        <title type="html"><![CDATA[Quiz 0107 Summary]]></title>
+        <id>https://parallelist-c.github.io/post/quiz-0107-summary/</id>
+        <link href="https://parallelist-c.github.io/post/quiz-0107-summary/">
+        </link>
+        <updated>2021-01-08T13:22:46.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="t1-word">T1 word</h1>
+<h2 id="description">Description</h2>
+<p>你有一个由小写字母组成的长度为 n 的字符串。每一步你要找到它的子串中最短的重复块（一个重复块由一个字符串与自身连接而成）。如果有多于一个，你必须选择最左边的那个。你要将那个形如 XX(X - 某个字符串)的重复块替换成 X，即删除其中的一个 X。重复以上步骤直到字符串中不存在重复块。<br>
+输出最终的字符串。<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>≤</mo><mn>5</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">n\leq 5\times 10^4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span></span></span></span></p>
+<h2 id="solution">Solution</h2>
+<p>判断串中任意位置的重复块除了哈希貌似也没有别的方法。SAM 啊 exkmp 啊 ACAM 啊都束手无策。<br>
+但是找所有的重复块有一个经典的 trick ：枚举可能的重复串长度 len ，在原字符串中每隔 len 插标，比较相邻两个标的 lcp+lcs 与 len 的大小，即可判断此处是否存在长度为 len 的重复串。求相邻两个标的 lcp 和 lcs 都可以哈希+二分。<br>
+并且这个 trick 有个优势：每次找到的重复串一定是目前长度最小且起始位置最靠左的。<br>
+恰好适合这道题目呢🤞。<br>
+但是每次修改完要删除啊，这一删除哈希数组就得重构了。<br>
+大丈夫です ！每次找到 len 长度下的所有重复块并一起重构。这样至多重构 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msqrt><mi>n</mi></msqrt></mrow><annotation encoding="application/x-tex">\sqrt{n}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.23972em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8002800000000001em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathdefault">n</span></span></span><span style="top:-2.76028em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width='400em' height='1.08em' viewBox='0 0 400000 1080' preserveAspectRatio='xMinYMin slice'><path d='M95,702c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,
+-10,-9.5,-14c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54c44.2,-33.3,65.8,
+-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10s173,378,173,378c0.7,0,
+35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429c69,-144,104.5,-217.7,106.5,
+-221c5.3,-9.3,12,-14,20,-14H400000v40H845.2724s-225.272,467,-225.272,467
+s-235,486,-235,486c-2.7,4.7,-9,7,-19,7c-6,0,-10,-1,-12,-3s-194,-422,-194,-422
+s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.23972em;"><span></span></span></span></span></span></span></span></span> 次。<br>
+复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="script">O</mi><mo>(</mo><mi>n</mi><msub><mi>log</mi><mo>⁡</mo><mn>2</mn></msub><mi>n</mi><mo>+</mo><mi>n</mi><msqrt><mi>n</mi></msqrt><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal{O}(n\log_2{n}+n\sqrt{n})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathcal" style="margin-right:0.02778em;">O</span></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.20696799999999996em;"><span style="top:-2.4558600000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.24414em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">n</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.05028em;vertical-align:-0.25em;"></span><span class="mord mathdefault">n</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8002800000000001em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathdefault">n</span></span></span><span style="top:-2.76028em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width='400em' height='1.08em' viewBox='0 0 400000 1080' preserveAspectRatio='xMinYMin slice'><path d='M95,702c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,
+-10,-9.5,-14c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54c44.2,-33.3,65.8,
+-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10s173,378,173,378c0.7,0,
+35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429c69,-144,104.5,-217.7,106.5,
+-221c5.3,-9.3,12,-14,20,-14H400000v40H845.2724s-225.272,467,-225.272,467
+s-235,486,-235,486c-2.7,4.7,-9,7,-19,7c-6,0,-10,-1,-12,-3s-194,-422,-194,-422
+s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.23972em;"><span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 。</p>
+<h2 id="code">Code</h2>
+<pre><code class="language-cpp">int LCP(int p1,int p2){
+    int l=1,r=Maxpre,ret=0;
+    while(r&gt;=l){
+        int mid=l+r&gt;&gt;1;
+        if(geth(p1-mid+1,p1)==geth(p2-mid+1,p2)) ret=mid,l=mid+1;
+        else r=mid-1;
+    }
+    return ret;
+}
+int LCS(int p1,int p2){
+    int l=1,r=p2-p1,ret=0;
+    while(r&gt;=l){
+        int mid=l+r&gt;&gt;1;
+        if(geth(p1,p1+mid-1)==geth(p2,p2+mid-1)) ret=mid,l=mid+1;
+        else r=mid-1;
+    }
+    return ret;
+}
+int main(){
+
+    scanf(&quot;%s&quot;,s+1);
+    int n=strlen(s+1);
+    p[0]=1;
+    for(int i=1;i&lt;=n;++i)
+        p[i]=p[i-1]*B,w[i]=1ull*B*(w[i-1]+s[i]-'a'+1);
+    for(int len=1;len&lt;=n/2;++len){
+        bool flag=0;
+        int j=len,k=len&lt;&lt;1;Maxpre=len;
+        while(k&lt;=n){
+            int lcp=LCP(j,k),lcs=LCS(j,k);
+            if(lcp+lcs&gt;len){
+                for(int i=j-lcp+1;i&lt;=j-lcp+len;++i)
+                    del[i]=len;
+                flag=true;Maxpre=lcp; // 注意 Maxpre 。要避免这次的 lcs 影响到下次的 lcp 。
+            }
+            else Maxpre=len;
+            j+=len,k+=len;
+        }
+        if(!flag) continue;
+        int cnt=0;
+        for(int i=1;i&lt;=n;++i)
+            if(del[i]^len) 
+                s[++cnt]=s[i],w[cnt]=1ull*B*(w[cnt-1]+s[i]-'a'+1);
+        n=cnt;
+    }
+    for(int i=1;i&lt;=n;++i)
+        putchar(s[i]);
+    return 0;
+}
+</code></pre>
+<h1 id="t2-dream">T2 dream</h1>
+<h2 id="description-2">Description</h2>
+<p>给定一个长度为 n 的仅含小写字母的字符串。有 m 次操作，每次形如 l r ，要求将 s[l:r] 变为字典序最小的回文串（若无解则忽略）。输出最后的字符串。<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>≤</mo><mn>5</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">n\leq 5\times 10^4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span></span></span></span></p>
+<h2 id="solution-2">Solution</h2>
+<p>考虑将 s[l:r] 变为回文串的过程：枚举每个字符，假设有 d 个，那么就会在左/右指针处分别插入 d/2 个，然后左/右指针均向中间靠拢 d/2 ；如果 d 是奇数，特判后直接放在中间即可。<br>
+优化空间在于加速“插入”的过程，而这个本质上就是区间覆盖，故可以考虑线段树维护。<br>
+复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="script">O</mi><mo>(</mo><mn>26</mn><mi>n</mi><msub><mi>log</mi><mo>⁡</mo><mn>2</mn></msub><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal{O}(26n\log_2{n})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathcal" style="margin-right:0.02778em;">O</span></span><span class="mopen">(</span><span class="mord">2</span><span class="mord">6</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.20696799999999996em;"><span style="top:-2.4558600000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.24414em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">n</span></span><span class="mclose">)</span></span></span></span> 。</p>
+<h2 id="code-2">Code</h2>
+<pre><code class="language-cpp">struct node{
+    int a[26];
+    node(){memset(a,0,sizeof a);}
+    node operator +(const node &amp;b)const{
+        node ret;
+        for(int i=0;i&lt;26;++i)
+            ret.a[i]=b.a[i]+a[i];
+        return ret;
+    }
+}t[N&lt;&lt;2];
+namespace SEG{
+#define mid (l+r&gt;&gt;1)
+#define ls p&lt;&lt;1,l,mid
+#define rs p&lt;&lt;1|1,mid+1,r
+    int tag[N&lt;&lt;2];
+    void pushup(int p){
+        t[p]=t[p&lt;&lt;1]+t[p&lt;&lt;1|1];
+    }
+    void setval(int p,int l,int r,int v){
+        t[p]=node();
+        t[p].a[v]=(r-l+1);
+        tag[p]=v;
+    }
+    void pushdn(int p,int l,int r,int v){
+        setval(ls,v),setval(rs,v);tag[p]=-1;
+    }
+    void build(int p=1,int l=1,int r=n){
+        tag[p]=-1;
+        if(l==r) return ++t[p].a[s[l]-'a'],void();
+        build(ls);build(rs);
+        pushup(p);
+    }
+    void modify(int p,int l,int r,int nl,int nr,int v){
+        if(l&gt;=nl&amp;&amp;r&lt;=nr) return setval(p,l,r,v),void();
+        if(~tag[p]) pushdn(p,l,r,tag[p]);
+        if(mid&gt;=nl) modify(ls,nl,nr,v);
+        if(mid&lt; nr) modify(rs,nl,nr,v);
+        pushup(p);
+    }
+    node query(int p,int l,int r,int nl,int nr){
+        if(l&gt;=nl&amp;&amp;r&lt;=nr) return t[p];
+        if(~tag[p]) pushdn(p,l,r,tag[p]);
+        if(mid&gt;=nr) return query(ls,nl,nr);
+        else if(mid&lt;nl) return query(rs,nl,nr);
+        else return query(ls,nl,mid)+query(rs,mid+1,nr); 
+    }
+    void print(int p=1,int l=1,int r=n){
+        if(l==r){
+            for(int i=0;i&lt;26;++i)
+                if(t[p].a[i]) {putchar(char(i+'a'));break;}
+            return;
+        }
+        if(~tag[p]) pushdn(p,l,r,tag[p]);
+        print(ls),print(rs);
+    }
+}
+using namespace SEG;
+int main(){
+
+    scanf(&quot;%d%d&quot;,&amp;n,&amp;m);
+    scanf(&quot;%s&quot;,s+1);
+    build();
+    for(int i=1,l,r;i&lt;=m;++i){
+        scanf(&quot;%d%d&quot;,&amp;l,&amp;r);
+        node sta=query(1,1,n,l,r);
+        int L=l,R=r,times=(r-l+1)&amp;1;
+        for(int j=0;j&lt;26;++j)
+            times-=(sta.a[j]&amp;1);
+        if(times) continue;
+        for(int j=0;j&lt;26;++j){
+            int d=sta.a[j]/2;
+            if(d) modify(1,1,n,L,L+d-1,j);
+            if(d) modify(1,1,n,R-d+1,R,j);
+            L+=d,R-=d;
+            if(sta.a[j]&amp;1)
+                modify(1,1,n,mid,mid,j);
+        }
+    }
+    print();
+    return 0;
+}
+</code></pre>
+<h1 id="t3-word">T3 word</h1>
+<h2 id="description-3">Description</h2>
+<p>有一个长度为 n 的由小写字符组成的字符串。定义极大连续相同的子序列为 energy 。将给定的字符串重新排列，求有多少种不同的排列方式使得它和原字符串有相同数量的 energy 。对 1000003 取模。<br>
+保证 energy 的数量 m 不多于 100 。<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">n\leq 10^5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span></p>
+<h2 id="solution-3">Solution</h2>
+<p>关键切入点当然是 energy 的数量限制啦。<br>
+设 f[i][j] 表示考虑前 i 种字符，已经组成了 j 个 energy 的方案数；cnt[i] 表示第 i 种字符的个数；sum[i] 表示 cnt 的前缀和。<br>
+插入第 i+1 种字符时，新增的 energy 的来源有两处——直接插入产生的 energy 和分隔开原有的 energy 产生的 energy 。设 j 表示原有的 energy ，k 表示当前直接插入的 energy ，l 表示因分隔而产生的 energy 。可得到转移方程式为</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>[</mo><mi>j</mi><mo>+</mo><mi>k</mi><mo>+</mo><mi>l</mi><mo>]</mo><mo>=</mo><msub><mi>f</mi><mi>i</mi></msub><mo>[</mo><mi>j</mi><mo>]</mo><mo>×</mo><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mrow><msub><mtext>cnt</mtext><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>−</mo><mn>1</mn></mrow><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></mfrac><mo fence="true">)</mo></mrow><mo>×</mo><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mrow><msub><mtext>sum</mtext><mi>i</mi></msub><mo>−</mo><mi>j</mi></mrow><mi>l</mi></mfrac><mo fence="true">)</mo></mrow><mo>×</mo><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow><mrow><mi>k</mi><mo>−</mo><mi>l</mi></mrow></mfrac><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">f_{i+1}[j+k+l]=f_{i}[j]\times \binom{\text{cnt}_{i+1}-1}{k-1}\times\binom{\text{sum}_i-j}{l}\times\binom{j+1}{k-l}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.40003em;vertical-align:-0.95003em;"></span><span class="mord"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord text"><span class="mord">cnt</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.7693300000000001em;"><span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">)</span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.40003em;vertical-align:-0.95003em;"></span><span class="mord"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3365200000000002em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord text"><span class="mord">sum</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">)</span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.40003em;vertical-align:-0.95003em;"></span><span class="mord"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3365200000000002em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span><span style="top:-3.6770000000000005em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.7693300000000001em;"><span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">)</span></span></span></span></span></span></span></p>
+<p>考虑转移方程式的意义。<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mrow><msub><mtext>cnt</mtext><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>−</mo><mn>1</mn></mrow><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></mfrac><mo fence="true">)</mo></mrow><annotation encoding="application/x-tex">\binom{\text{cnt}_{i+1}-1}{k-1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2984390000000001em;vertical-align:-0.403331em;"></span><span class="mord"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size1">(</span></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.895108em;"><span style="top:-2.355em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.144em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">cnt</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32808571428571426em;"><span style="top:-2.357em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.20252142857142857em;"><span></span></span></span></span></span></span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.403331em;"><span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size1">)</span></span></span></span></span></span> 表示第 i+1 种字符组成 k 个 energy 的方案数，然后是个经典隔板法；考虑插入的具体情况：最开头以及 j 个 energy 的末尾插入时都不会造成分隔，这部分的方案数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow><mrow><mi>k</mi><mo>−</mo><mi>l</mi></mrow></mfrac><mo fence="true">)</mo></mrow><annotation encoding="application/x-tex">\binom{j+1}{k-l}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.308995em;vertical-align:-0.403331em;"></span><span class="mord"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size1">(</span></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.905664em;"><span style="top:-2.355em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span><span class="mbin mtight">−</span><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span></span></span></span><span style="top:-3.144em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.403331em;"><span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size1">)</span></span></span></span></span></span> ，其余的位置插入时会造成因分隔而产生的 energy ，这部分的方案数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mrow><msub><mtext>sum</mtext><mi>i</mi></msub><mo>−</mo><mi>j</mi></mrow><mi>l</mi></mfrac><mo fence="true">)</mo></mrow><annotation encoding="application/x-tex">\binom{\text{sum}_i-j}{l}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.255674em;vertical-align:-0.35001em;"></span><span class="mord"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size1">(</span></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9056639999999999em;"><span style="top:-2.3550000000000004em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span></span></span></span><span style="top:-3.144em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">sum</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3280857142857143em;"><span style="top:-2.357em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span><span class="mbin mtight">−</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size1">)</span></span></span></span></span></span> 。<br>
+复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="script">O</mi><mo>(</mo><mi>n</mi><mo>+</mo><mn>26</mn><msup><mi>m</mi><mn>3</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal{O}(n+26m^3)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathcal" style="margin-right:0.02778em;">O</span></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mord">6</span><span class="mord"><span class="mord mathdefault">m</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 。</p>
+<h2 id="code-3">Code</h2>
+<pre><code class="language-cpp">const int N=1e5+5,M=1e2+5,Mod=1e6+3;
+using namespace std;
+char s[N];
+int f[M],g[M],sum[26],cnt[26],c[N][M];
+inline int Plus(int a,int b){return a+b&gt;=Mod?a+b-Mod:a+b;}
+int main(){
+
+    scanf(&quot;%s&quot;,s+1);
+    int n=strlen(s+1),tot=0;
+    for(int i=1;i&lt;=n;++i)
+        tot+=(s[i]!=s[i-1]);
+    for(int i=1;i&lt;=n;++i)
+        ++cnt[s[i]-'a'];
+    sum[0]=cnt[0];
+    for(int i=1;i&lt;26;++i)
+        sum[i]=sum[i-1]+cnt[i];
+    c[0][0]=c[1][0]=1;
+    for(int i=1;i&lt;=n;++i,c[i][0]=1)
+    for(int j=1;j&lt;=i&amp;&amp;j&lt;=tot;++j)
+        c[i][j]=Plus(c[i-1][j-1],c[i-1][j]);
+    f[bool(sum[0])]=1;
+    for(int i=1;i&lt;26;++i){
+        if(!cnt[i]) continue;
+        memset(g,0,sizeof g);
+        for(int j=0;j&lt;=tot&amp;&amp;j&lt;=sum[i-1];++j)
+        for(int k=1;j+k&lt;=tot&amp;&amp;k&lt;=cnt[i];++k)
+        for(int l=0;j+k+l&lt;=tot&amp;&amp;l&lt;=k;++l){
+            int now=1ll*f[j]*c[j+1][k-l]%Mod*c[cnt[i]-1][k-1]%Mod*c[sum[i-1]-j][l]%Mod;
+            g[j+k+l]=Plus(g[j+k+l],now);
+        }
+        for(int j=0;j&lt;=tot;++j) f[j]=g[j];
+    }
+    printf(&quot;%d\n&quot;,f[tot]);
+    return 0;
+}
+</code></pre>
+<h1 id="analysis">Analysis</h1>
+<p>T1 失误在于完全不记得 trick 了。做题量要增加。</p>
+<p>T2 失误在于未想清楚贸然动手。觉得维护序列用 splay 再好不过了，而且似乎只需要在每个节点找到当前位置在最终回文串中是什么字母，再打个标记就行了。不要浅尝辄止啊 QAQ 😭  这个标记真的可以下传吗？！<strong>用数据结构维护时不仅要知道打懒标记，更要想清楚懒标记能不能下传，怎么下传</strong>。</p>
+<p>T3 考试的时候完全没想，考后也没有思路。从字符和极大连续相同字符串入手设置状态的思想很妙。枚举的时候要学会<strong>枚举段</strong>的概念，而不要局限于点。点到<strong>段</strong>只需要一个隔板法，而段可以省去超级多的讨论，用起来很实用。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[CF700E Cool Slogans 解题报告]]></title>
         <id>https://parallelist-c.github.io/post/cf700e-cool-slogans-jie-ti-bao-gao/</id>
@@ -733,95 +962,6 @@ child：a[p].child[v] 连向了点 x ，满足 s[x] 恰是 v+s[p]+v 。因此转
         access(x),splay(x),lc(x)=fa[lc(x)]=0;update(x);
     }
 }t[2];
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[[AHOI2005] 航线规划 解题报告]]></title>
-        <id>https://parallelist-c.github.io/post/ahoi2005-hang-xian-gui-hua/</id>
-        <link href="https://parallelist-c.github.io/post/ahoi2005-hang-xian-gui-hua/">
-        </link>
-        <updated>2020-12-29T06:13:00.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="description">Description</h2>
-<p>给定一张图，需要支持两个操作：</p>
-<ul>
-<li>查询 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi><mo separator="true">,</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">u,v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">u</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span></span></span></span> 两点间的必经边数量。</li>
-<li>删除 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi><mo separator="true">,</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">u,v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">u</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span></span></span></span> 直接相连的边，保证一定存在。</li>
-</ul>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>≤</mo><mn>3</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>4</mn></msup><mo separator="true">,</mo><mi>m</mi><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup><mo separator="true">,</mo><mi>q</mi><mo>≤</mo><mn>4</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">n\leq 3\times 10^4,m\leq 10^5,q\leq 4\times 10^4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.008548em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.008548em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span></span></span></span></p>
-<h2 id="solution">Solution</h2>
-<p>首先可以发现题目本质是要求动态维护边双树，边双树上的删边操作并不好处理，我们将询问离线下来转化为加边操作，这样可以通过缩点在上限为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="script">O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal{O}(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathcal" style="margin-right:0.02778em;">O</span></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span> 的时间内维护树的形态。<br>
-假如我们已经构建出来了边双树，那么 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi><mo separator="true">,</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">u,v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">u</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span></span></span></span> 两点间的必经边数量就是两点在边双树上的距离。<br>
-我们可以方便地在 LCT 上动态维护两点的距离，于是可以用 LCT 来维护边双树。</p>
-<h2 id="code">Code</h2>
-<pre><code class="language-cpp">int Find(int x){return x==uni[x]?x:uni[x]=Find(uni[x]);}
-namespace LCT{
-#define lc(x) c[x][0]
-#define rc(x) c[x][1]
-    int s[N],sz[N],fa[N],rev[N],c[N][2];
-    bool isrt(int x){
-        return fa[x]==0 || (lc(fa[x])!=x&amp;&amp;rc(fa[x])!=x);
-    }
-    void update(int x){
-        sz[x]=sz[lc(x)]+sz[rc(x)]+1;
-    }
-    void revers(int x){
-        swap(lc(x),rc(x));rev[x]^=1;
-    }
-    void pushdn(int x){
-        if(rev[x]==0) return;
-        revers(lc(x));revers(rc(x));
-        rev[x]=0;
-    }
-    void rotate(int x){
-        int y=fa[x],z=fa[y],t=rc(y)==x;
-        if(!isrt(y)) c[z][rc(z)==y]=x;fa[x]=z;
-        c[y][t]=c[x][t^1];fa[c[x][t^1]]=y;
-        c[x][t^1]=y;fa[y]=x;
-        update(y),update(x);
-    }
-    void splay(int x){
-        int top,y=x;s[top=1]=x;
-        while(!isrt(y)) y=fa[y],s[++top]=y;
-        while(top) pushdn(s[top--]);
-        while(!isrt(x)){
-            int y=fa[x],z=fa[y];
-            if(!isrt(y))
-                ((rc(y)==x)^(rc(z)==y))?rotate(x):rotate(y);
-            rotate(x);
-        }
-    }
-    void access(int x){
-        for(int i=0;x;x=fa[i=x]=Find(fa[x]))   //可能父节点已经被缩了
-            splay(x),rc(x)=i,update(x);
-    }
-    void makert(int x){
-        access(x),splay(x),revers(x);
-    }
-    int  findrt(int x){
-        access(x);splay(x);
-        while(lc(x)) 
-            pushdn(x=lc(x));
-        splay(x);
-        return x;
-    }
-    void split(int x,int y){
-        makert(x),access(y),splay(y);
-    }
-    void del(int x,int y){          // 缩点操作
-        uni[x]=y;
-        if(lc(x)) del(lc(x),y);
-        if(rc(x)) del(rc(x),y);
-    }
-    void merge(int x,int y){
-        if(x==y) return;
-        makert(x);
-        if(findrt(y)!=x)
-            return fa[x]=y,void();
-        del(rc(x),x);rc(x)=0;update(x);
-    }
-}
-using namespace LCT;
 </code></pre>
 ]]></content>
     </entry>
