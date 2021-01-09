@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://parallelist-c.github.io</id>
     <title>Parallelist</title>
-    <updated>2021-01-09T02:16:13.424Z</updated>
+    <updated>2021-01-09T05:55:49.861Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://parallelist-c.github.io"/>
     <link rel="self" href="https://parallelist-c.github.io/atom.xml"/>
@@ -10,6 +10,126 @@
     <logo>https://parallelist-c.github.io/images/avatar.png</logo>
     <icon>https://parallelist-c.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Parallelist</rights>
+    <entry>
+        <title type="html"><![CDATA[Luogu4299 首都 解题报告]]></title>
+        <id>https://parallelist-c.github.io/post/luogu4299-shou-du/</id>
+        <link href="https://parallelist-c.github.io/post/luogu4299-shou-du/">
+        </link>
+        <updated>2021-01-09T05:00:16.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="description">Description</h2>
+<p>有 n 个点，初始时互不连通。有 q 次操作，分别为如下三种类型：</p>
+<ul>
+<li>连接 x y 两个点。保证 x y 不连通。</li>
+<li>询问编号为 x 的点所在的树的重心的编号。</li>
+<li>询问当前所有树的重心的编号异或和。</li>
+</ul>
+<p>重心定义为某个使得其他点到它的距离之和最小的点。有多个重心时选择编号最小的。<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup><mo separator="true">,</mo><mi>m</mi><mo>≤</mo><mn>2</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">n\leq 10^5,m\leq 2\times 10^5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.008548em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span></p>
+<h2 id="solution">Solution</h2>
+<p>重心的性质很优美，大致来说有四个：</p>
+<ul>
+<li>树中所有点到某个点的距离和中，到重心的距离和是最小的。</li>
+<li>以树的重心为根时，除根节点以外所有节点的子树大小均不超过 n/2 。</li>
+<li>把两棵树通过某一点相连得到一颗新的树，新的树的重心必然在连接原来两棵树重心的路径上。</li>
+<li>当在原树上新增/删除一个叶子节点时，重心至多移动一条边的距离。</li>
+</ul>
+<p>对于这道题而言，第二条和第三条实在是再好不过了。<br>
+这里简要证明以下第三条性质。不在路径上的点在原树上的子树大小不超过原树大小的一半，那么当删去它的子树后不小于原树大小的一半。而删去它的子树后的这个连通块完整继承了另一棵树的所有节点，故连通块的大小一定大于新树大小的一半。<br>
+有了上述性质，我们就将重心的范围限制在了一条链上。<br>
+链上的点除了向两个重心方向的子树外，其余的子树的大小一定小于新树大小的一半。我们只需考虑链上的点向两个重心方向的子树。用 splay 维护这条链，每个节点额外代表链上的一个区间，到达节点时比较 左/右子节点的大小与区间左端点以左（lsum）/右端点以右的大小（rsum）之和（也就是该节点向着两个重心的子树大小） 与新树大小的一半的大小。如果均为不大于，那么该节点自然就是重心啦；否则更新 lsum/rsum ，再进入子树大小较大的那一边继续找。<br>
+可能讲得有些复杂了，实际上只要看懂了还是很好理解的。类似于树上二分嘛。</p>
+<p>问题转化为要求取出树上一条链，并且用 splay 维护它。当然是 LCT 啦。</p>
+<p>复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="script">O</mi><mo>(</mo><mi>m</mi><msub><mi>log</mi><mo>⁡</mo><mn>2</mn></msub><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal{O}(m\log_2{n})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathcal" style="margin-right:0.02778em;">O</span></span><span class="mopen">(</span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.20696799999999996em;"><span style="top:-2.4558600000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.24414em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">n</span></span><span class="mclose">)</span></span></span></span> 。</p>
+<h2 id="code">Code</h2>
+<pre><code class="language-cpp">const int N=1e5+6;
+using namespace std;
+namespace LCT{
+#define lc(x) c[x][0]
+#define rc(x) c[x][1]
+    int sz[N],fa[N],vir[N],tag[N],c[N][2]; 
+    inline bool nrt(int x){return lc(fa[x])==x || rc(fa[x])==x;}
+    inline void update(int x){
+        sz[x]=sz[lc(x)]+sz[rc(x)]+vir[x]+1;
+    }
+    inline void revers(int x){
+        tag[x]^=1;swap(lc(x),rc(x));
+    }
+    inline void pushdn(int x){
+        revers(lc(x)),revers(rc(x)),tag[x]=0;
+    }
+    inline void rotate(int x){
+        int y=fa[x],z=fa[y],t=rc(y)==x;
+        if(nrt(y)) c[z][rc(z)==y]=x;fa[x]=z;
+        c[y][t]=c[x][t^1];fa[c[x][t^1]]=y;
+        c[x][t^1]=y;fa[y]=x;
+        update(y),update(x);
+    }
+    void pushall(int x){
+        if(nrt(x)) pushall(fa[x]);
+        if(tag[x]) pushdn(x);
+    }
+    inline void splay(int x){
+        pushall(x);
+        while(nrt(x)){
+            int y=fa[x],z=fa[y];
+            if(nrt(y))
+                ((rc(y)==x)^(rc(z)==y))?rotate(x):rotate(y);
+            rotate(x);
+        }
+    }
+    inline void access(int x){
+        for(int i=0;x;x=fa[i=x])
+            splay(x),vir[x]+=sz[rc(x)],rc(x)=i,vir[x]-=sz[i],update(x);
+    }
+    inline void makert(int x){
+        access(x);splay(x);revers(x);
+    }
+    inline void split(int x,int y){
+        makert(x);access(y);splay(y);
+    }
+    inline void link(int x,int y){
+        split(x,y);fa[x]=y;vir[y]+=sz[x];update(y);
+    }
+    int solve(int x){
+        int Max=sz[x]&gt;&gt;1,Jud=sz[x]&amp;1,lsum=0,rsum=0,ret=0x3f3f3f3f;
+        while(x){
+            if(tag[x]) pushdn(x);
+            int nowl=lsum+sz[lc(x)],nowr=rsum+sz[rc(x)];
+            if(nowl&lt;=Max&amp;&amp;nowr&lt;=Max)
+                if(Jud){ret=x;break;}
+                else if(ret&gt;x) ret=x;
+            if(nowl&lt;nowr) lsum+=sz[x]-sz[rc(x)],x=rc(x);
+            else rsum+=sz[x]-sz[lc(x)],x=lc(x);
+        }
+        return ret;
+    }
+}
+using namespace LCT;
+int n,m,f[N];
+int Find(int x){return f[x]==x?x:f[x]=Find(f[x]);}
+int main(){
+
+    scanf(&quot;%d%d&quot;,&amp;n,&amp;m);
+    int ans=0;
+    for(int i=1;i&lt;=n;++i) sz[i]=1,f[i]=i,ans^=i;
+    char s[10];
+    for(int i=1,x,y;i&lt;=m;++i){
+        scanf(&quot;%s&quot;,s);
+        if(s[0]=='X') w(ans),putchar(10);
+        else if(s[0]=='Q') scanf(&quot;%d&quot;,&amp;x),w(Find(x)),putchar(10);
+        else{
+            scanf(&quot;%d%d&quot;,&amp;x,&amp;y);link(x,y);
+            split(x=Find(x),y=Find(y));
+            int now=solve(y);
+            f[x]=f[y]=f[now]=now;
+            ans^=x^y^now;
+        }
+    }
+    return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Quiz 0107 Summary]]></title>
         <id>https://parallelist-c.github.io/post/quiz-0107-summary/</id>
@@ -893,76 +1013,6 @@ child：a[p].child[v] 连向了点 x ，满足 s[x] 恰是 v+s[p]+v 。因此转
 <p>与 PAM 配套的有一个 trans 指针，定义为指向小于等于当前节点长度的一半的最长回文后缀。<br>
 求解 trans 的方法与 fail 类似。从父节点的 trans 开始检验，如果当前并不能构成回文子串/长度大于一半，就继续跳 fail 。</p>
 <p>PAM 的拓展性没有 SAM 强，但也十分灵活。DFA 这种东西，平常一定要多加深理解啊 👊 。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Query on a tree VI 解题报告]]></title>
-        <id>https://parallelist-c.github.io/post/query-on-a-tree-vi-jie-ti-bao-gao/</id>
-        <link href="https://parallelist-c.github.io/post/query-on-a-tree-vi-jie-ti-bao-gao/">
-        </link>
-        <updated>2020-12-29T12:06:33.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="description">Description</h2>
-<p>给你一棵 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 个点的树，每个点为黑色或白色。要求维护两个操作：</p>
-<ul>
-<li>改变点 u 的颜色</li>
-<li>查询包含点 u 的同色连通块大小</li>
-</ul>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo separator="true">,</mo><mi>q</mi><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">n,q\leq 10^5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8304100000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span></p>
-<h2 id="solution">Solution</h2>
-<p>动态维护连通块可以考虑 LCT 。但是当一个点颜色改变时如果我们枚举其所有出边来更改，复杂度爆炸。</p>
-<p>平常都是把边的信息放在点上，因为边数比点数少，信息一定不会有缺失；很少把点的信息放在边上。<br>
-实际上，点的信息也是可以放在边上的。对于非根节点，每个点的信息放在父边上；对于根节点，我们另开一个虚拟根节点与其连边用来存根节点的信息。</p>
-<p>具体于本题而言，我们建两棵 LCT ，分别代表黑/白色。在 LCT 中，我们只加入对应颜色的边。点 u 在颜色 c[u] 对应的 LCT 上的最远祖先一定是虚拟节点/异色节点，即 findroot(u) 后，根的重子树大小就是包含点 u 的同色连通块大小（因为 findroot 中 splay 了根节点）。根的重儿子必定是其右儿子。</p>
-<p>问题转化为维护 LCT 上 u 的子树大小，维护一个 vir[u] 表示连向 u 的所有轻链 size 即可。</p>
-<p>需要注意的是，在本题中，树的形态是固定的，也就是我们不能进行 makeroot 操作。但庆幸的是，经过上述分析后，我们可以发现 link 和 cut 操作都是恰好针对点 u 和其父节点来的，故仍然可以实现。</p>
-<h2 id="code">Code</h2>
-<pre><code class="language-cpp">struct LCT{
-#define lc(x) c[x][0]
-#define rc(x) c[x][1]
-    int sz[N],fa[N],vir[N],c[N][2];
-    LCT(){for(int i=1;i&lt;N;++i) sz[i]=1;}
-    inline void update(int x){
-        sz[x]=sz[lc(x)]+sz[rc(x)]+vir[x]+1;
-    }
-    inline bool isrt(int x){
-        return fa[x]==0 || (lc(fa[x])!=x&amp;&amp;rc(fa[x])!=x);
-    }
-    inline void rotate(int x){
-        int y=fa[x],z=fa[y],t=rc(y)==x;
-        if(!isrt(y)) c[z][rc(z)==y]=x;fa[x]=z;
-        c[y][t]=c[x][t^1];fa[c[x][t^1]]=y;
-        c[x][t^1]=y;fa[y]=x;
-        update(y),update(x);
-    }
-    void splay(int x){
-        while(!isrt(x)){
-            int y=fa[x],z=fa[y];
-            if(!isrt(y))
-                ((rc(y)==x)^(rc(z)==y))?rotate(x):rotate(y);
-            rotate(x);
-        }
-    }
-    void access(int x){
-        for(int i=0;x;x=fa[i=x])
-            splay(x),vir[x]+=sz[rc(x)],rc(x)=i,vir[x]-=sz[i],update(x);
-    }
-    int findrt(int x){                          
-        access(x);splay(x);
-        while(lc(x)) 
-            x=lc(x);
-        splay(x);
-        return x;
-    }
-    void link(int x,int y){
-        splay(x);fa[x]=y;
-        access(y),splay(y);
-        vir[y]+=sz[x];sz[y]+=sz[x];
-    }
-    void cut(int x,int y){
-        access(x),splay(x),lc(x)=fa[lc(x)]=0;update(x);
-    }
-}t[2];
-</code></pre>
 ]]></content>
     </entry>
 </feed>
