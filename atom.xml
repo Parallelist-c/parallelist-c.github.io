@@ -1,19 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://parallelist-c.github.io</id>
+    <id>http://localhost:4000</id>
     <title>Parallelist</title>
-    <updated>2021-01-09T06:08:59.284Z</updated>
+    <updated>2021-01-11T01:08:59.185Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://parallelist-c.github.io"/>
-    <link rel="self" href="https://parallelist-c.github.io/atom.xml"/>
+    <link rel="alternate" href="http://localhost:4000"/>
+    <link rel="self" href="http://localhost:4000/atom.xml"/>
     <subtitle>浅い夢だから 胸をはなれない</subtitle>
-    <logo>https://parallelist-c.github.io/images/avatar.png</logo>
-    <icon>https://parallelist-c.github.io/favicon.ico</icon>
+    <logo>http://localhost:4000/images/avatar.png</logo>
+    <icon>http://localhost:4000/favicon.ico</icon>
     <rights>All rights reserved 2021, Parallelist</rights>
     <entry>
+        <title type="html"><![CDATA[一类树形 dp 方程的可换根化处理]]></title>
+        <id>http://localhost:4000/post/yi-lei-shu-xing-dp-fang-cheng-de-ke-huan-gen-hua-chu-li/</id>
+        <link href="http://localhost:4000/post/yi-lei-shu-xing-dp-fang-cheng-de-ke-huan-gen-hua-chu-li/">
+        </link>
+        <updated>2021-01-11T00:01:14.000Z</updated>
+        <content type="html"><![CDATA[<p>换根 dp 是一个广为流传的算法。<br>
+换根 dp 对于 dp 方程本身是有使用要求的，一般而言 dp 方程中只能含有常数和与 i 的子树有关的项。<br>
+本文将探讨对于下述方程如何使其可以换根处理</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>[</mo><mi>p</mi><mo>]</mo><mo>=</mo><mo>(</mo><munder><mo>∑</mo><mi>e</mi></munder><msub><mi>w</mi><mi>e</mi></msub><mo>×</mo><mi>f</mi><mo>[</mo><mi>s</mi><mi>o</mi><mi>n</mi><mo>]</mo><mo>)</mo><mo>+</mo><msub><mtext>dep</mtext><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">f[p]=(\sum_{e} w_e\times f[son])+\text{dep}_p
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">[</span><span class="mord mathdefault">p</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.3000100000000003em;vertical-align:-1.250005em;"></span><span class="mopen">(</span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.050005em;"><span style="top:-1.8999949999999999em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">e</span></span></span></span><span style="top:-3.0500049999999996em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.250005em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">e</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">[</span><span class="mord mathdefault">s</span><span class="mord mathdefault">o</span><span class="mord mathdefault">n</span><span class="mclose">]</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.0746879999999999em;vertical-align:-0.380248em;"></span><span class="mord"><span class="mord text"><span class="mord">dep</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.057252000000000025em;"><span style="top:-2.4558600000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">p</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.380248em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+<hr>
+<p>我们假设以 1 为根且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mtext>dep</mtext><mn>1</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\text{dep}_1=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.93858em;vertical-align:-0.24414em;"></span><span class="mord"><span class="mord text"><span class="mord">dep</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.20696799999999996em;"><span style="top:-2.4558600000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.24414em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 。<br>
+考虑将贡献归到每个点上，那么当目前枚举到子树 p 时，p 的子树内的点 x 的贡献应该是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mtext>dep</mtext><mi>x</mi></msub><mo>×</mo><mo>∏</mo><mi>w</mi></mrow><annotation encoding="application/x-tex">\text{dep}_x\times \prod w</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.93858em;vertical-align:-0.24414em;"></span><span class="mord"><span class="mord text"><span class="mord">dep</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.057252em;"><span style="top:-2.4558600000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.24414em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.00001em;vertical-align:-0.25001em;"></span><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∏</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span></span></span></span> 。<br>
+由于最终的方程中不能含有 dep ，我们将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mtext>dep</mtext><mi>x</mi></msub></mrow><annotation encoding="application/x-tex">\text{dep}_x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.93858em;vertical-align:-0.24414em;"></span><span class="mord"><span class="mord text"><span class="mord">dep</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.057252em;"><span style="top:-2.4558600000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.24414em;"><span></span></span></span></span></span></span></span></span></span> 拆到从 x 到根的每一条边上。并且将每一条边与与其相连的子节点对应。换句话说，当枚举到子树 p 时，我们只计算 p 的子树内节点的<strong>相对深度</strong>的贡献。<br>
+带入数值考虑可能形象一点。当枚举到子树 p 时，假设 x 的相对深度为 a ，路径权值之积为 b ，那么当枚举到子树 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mtext>fa</mtext><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">\text{fa}_p</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord text"><span class="mord">fa</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">p</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span> 时，x 的贡献会发生变化： <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>×</mo><mi>b</mi><mo>→</mo><mo>(</mo><mi>a</mi><mo>+</mo><mn>1</mn><mo>)</mo><mo>×</mo><mi>b</mi><mo>×</mo><mi>w</mi></mrow><annotation encoding="application/x-tex">a\times b\rightarrow (a+1)\times b\times w</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span></span></span></span> 。</p>
+<figure data-type="image" tabindex="1"><img src="http://localhost:4000/post-images/1610326579855.png" alt="" loading="lazy"></figure>
+<p>将之后的贡献拆开成 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>×</mo><mi>b</mi><mo>×</mo><mi>w</mi><mo>+</mo><mi>a</mi><mo>×</mo><mi>w</mi></mrow><annotation encoding="application/x-tex">a\times b\times w+a\times w</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span></span></span></span> 。前面的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>×</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a\times b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span> 恰好是 x 之前的贡献，我们直接设为 f ；那么问题就在于后面的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mo>×</mo><mi>w</mi></mrow><annotation encoding="application/x-tex">b\times w</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span></span></span></span> ，也就是路径权值之积的和。我们单独设 g[p] 表示 p 子树内路径权值之积的和，那么我们可以得到转移方程为</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mo>[</mo><mi>p</mi><mo>]</mo><mo>=</mo><munder><mo>∑</mo><mi>e</mi></munder><msub><mi>w</mi><mi>e</mi></msub><mo>×</mo><mi>g</mi><mo>[</mo><mi>s</mi><mi>o</mi><mi>n</mi><mo>]</mo><mo>+</mo><mn>1</mn><mspace linebreak="newline"></mspace><mi>f</mi><mo>[</mo><mi>p</mi><mo>]</mo><mo>=</mo><munder><mo>∑</mo><mi>e</mi></munder><msub><mi>w</mi><mi>e</mi></msub><mo>×</mo><mo>(</mo><mi>f</mi><mo>[</mo><mi>s</mi><mi>o</mi><mi>n</mi><mo>]</mo><mo>+</mo><mi>g</mi><mo>[</mo><mi>s</mi><mi>o</mi><mi>n</mi><mo>]</mo><mo>)</mo><mo>+</mo><mn>1</mn><mo>=</mo><mo>(</mo><munder><mo>∑</mo><mi>e</mi></munder><msub><mi>w</mi><mi>e</mi></msub><mo>×</mo><mi>f</mi><mo>[</mo><mi>s</mi><mi>o</mi><mi>n</mi><mo>]</mo><mo>)</mo><mo>+</mo><mi>g</mi><mo>[</mo><mi>p</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">g[p]=\sum_{e} w_e \times g[son]+1\\
+f[p]=\sum_{e} w_e \times (f[son]+g[son])+1=(\sum_{e}w_e\times f[son]) +g[p]
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mopen">[</span><span class="mord mathdefault">p</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.3000100000000003em;vertical-align:-1.250005em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.050005em;"><span style="top:-1.8999949999999999em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">e</span></span></span></span><span style="top:-3.0500049999999996em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.250005em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">e</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mopen">[</span><span class="mord mathdefault">s</span><span class="mord mathdefault">o</span><span class="mord mathdefault">n</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">[</span><span class="mord mathdefault">p</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.3000100000000003em;vertical-align:-1.250005em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.050005em;"><span style="top:-1.8999949999999999em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">e</span></span></span></span><span style="top:-3.0500049999999996em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.250005em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">e</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">[</span><span class="mord mathdefault">s</span><span class="mord mathdefault">o</span><span class="mord mathdefault">n</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mopen">[</span><span class="mord mathdefault">s</span><span class="mord mathdefault">o</span><span class="mord mathdefault">n</span><span class="mclose">]</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.3000100000000003em;vertical-align:-1.250005em;"></span><span class="mopen">(</span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.050005em;"><span style="top:-1.8999949999999999em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">e</span></span></span></span><span style="top:-3.0500049999999996em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.250005em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">e</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">[</span><span class="mord mathdefault">s</span><span class="mord mathdefault">o</span><span class="mord mathdefault">n</span><span class="mclose">]</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mopen">[</span><span class="mord mathdefault">p</span><span class="mclose">]</span></span></span></span></span></p>
+<p>+1 只是方便 p 在向上传递中累计权值。这里需要一个单位元。<br>
+上述方程是可以进行换根处理的。我们成功地转化了问题。</p>
+<p>有一个小细节：我们将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mtext>dep</mtext><mi>x</mi></msub></mrow><annotation encoding="application/x-tex">\text{dep}_x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.93858em;vertical-align:-0.24414em;"></span><span class="mord"><span class="mord text"><span class="mord">dep</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.057252em;"><span style="top:-2.4558600000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.24414em;"><span></span></span></span></span></span></span></span></span></span> 拆到了边上，并且将边对应到了相连的其子节点上。由于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mtext>dep</mtext><mn>1</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\text{dep}_1=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.93858em;vertical-align:-0.24414em;"></span><span class="mord"><span class="mord text"><span class="mord">dep</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.20696799999999996em;"><span style="top:-2.4558600000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.24414em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> ，故我们最终算出来的 f 值只有在第二层才是准确的（贡献只到了第二层的父边就停止了）；而如果 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mtext>dep</mtext><mn>1</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\text{dep}_1=1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.93858em;vertical-align:-0.24414em;"></span><span class="mord"><span class="mord text"><span class="mord">dep</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.20696799999999996em;"><span style="top:-2.4558600000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.24414em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> ，那么我们最终算出来的 f 值就只有根是准确的。</p>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Luogu4299 首都 解题报告]]></title>
-        <id>https://parallelist-c.github.io/post/luogu4299-shou-du/</id>
-        <link href="https://parallelist-c.github.io/post/luogu4299-shou-du/">
+        <id>http://localhost:4000/post/luogu4299-shou-du/</id>
+        <link href="http://localhost:4000/post/luogu4299-shou-du/">
         </link>
         <updated>2021-01-09T05:00:16.000Z</updated>
         <content type="html"><![CDATA[<h2 id="description">Description</h2>
@@ -132,8 +158,8 @@ int main(){
     </entry>
     <entry>
         <title type="html"><![CDATA[Quiz 0107 Summary]]></title>
-        <id>https://parallelist-c.github.io/post/quiz-0107-summary/</id>
-        <link href="https://parallelist-c.github.io/post/quiz-0107-summary/">
+        <id>http://localhost:4000/post/quiz-0107-summary/</id>
+        <link href="http://localhost:4000/post/quiz-0107-summary/">
         </link>
         <updated>2021-01-08T13:22:46.000Z</updated>
         <content type="html"><![CDATA[<h1 id="t1-word">T1 word</h1>
@@ -361,8 +387,8 @@ int main(){
     </entry>
     <entry>
         <title type="html"><![CDATA[CF700E Cool Slogans 解题报告]]></title>
-        <id>https://parallelist-c.github.io/post/cf700e-cool-slogans-jie-ti-bao-gao/</id>
-        <link href="https://parallelist-c.github.io/post/cf700e-cool-slogans-jie-ti-bao-gao/">
+        <id>http://localhost:4000/post/cf700e-cool-slogans-jie-ti-bao-gao/</id>
+        <link href="http://localhost:4000/post/cf700e-cool-slogans-jie-ti-bao-gao/">
         </link>
         <updated>2021-01-07T09:23:29.000Z</updated>
         <content type="html"><![CDATA[<h2 id="description">Description</h2>
@@ -464,8 +490,8 @@ namespace SAM{
     </entry>
     <entry>
         <title type="html"><![CDATA[[SHOI2014]三叉神经树 解题报告]]></title>
-        <id>https://parallelist-c.github.io/post/shoi2014san-cha-shen-jing-shu-jie-ti-bao-gao/</id>
-        <link href="https://parallelist-c.github.io/post/shoi2014san-cha-shen-jing-shu-jie-ti-bao-gao/">
+        <id>http://localhost:4000/post/shoi2014san-cha-shen-jing-shu-jie-ti-bao-gao/</id>
+        <link href="http://localhost:4000/post/shoi2014san-cha-shen-jing-shu-jie-ti-bao-gao/">
         </link>
         <updated>2021-01-06T10:22:46.000Z</updated>
         <content type="html"><![CDATA[<h2 id="description">Description</h2>
@@ -575,8 +601,8 @@ int main(){
     </entry>
     <entry>
         <title type="html"><![CDATA[[NOI2018]你的名字 解题报告]]></title>
-        <id>https://parallelist-c.github.io/post/noi2018-ni-de-ming-zi/</id>
-        <link href="https://parallelist-c.github.io/post/noi2018-ni-de-ming-zi/">
+        <id>http://localhost:4000/post/noi2018-ni-de-ming-zi/</id>
+        <link href="http://localhost:4000/post/noi2018-ni-de-ming-zi/">
         </link>
         <updated>2021-01-05T09:36:49.000Z</updated>
         <content type="html"><![CDATA[<h2 id="description">Description</h2>
@@ -738,8 +764,8 @@ namespace SAM2{
     </entry>
     <entry>
         <title type="html"><![CDATA[CF526D Om Nom and Necklace 解题报告]]></title>
-        <id>https://parallelist-c.github.io/post/cf526d-om-nom-and-necklace-jie-ti-bao-gao/</id>
-        <link href="https://parallelist-c.github.io/post/cf526d-om-nom-and-necklace-jie-ti-bao-gao/">
+        <id>http://localhost:4000/post/cf526d-om-nom-and-necklace-jie-ti-bao-gao/</id>
+        <link href="http://localhost:4000/post/cf526d-om-nom-and-necklace-jie-ti-bao-gao/">
         </link>
         <updated>2021-01-04T10:45:32.000Z</updated>
         <content type="html"><![CDATA[<h2 id="description">Description</h2>
@@ -771,8 +797,8 @@ namespace SAM2{
     </entry>
     <entry>
         <title type="html"><![CDATA[Luogu4173 残缺的字符串 解题报告]]></title>
-        <id>https://parallelist-c.github.io/post/luogu4173-can-que-de-zi-fu-chuan-jie-ti-bao-gao/</id>
-        <link href="https://parallelist-c.github.io/post/luogu4173-can-que-de-zi-fu-chuan-jie-ti-bao-gao/">
+        <id>http://localhost:4000/post/luogu4173-can-que-de-zi-fu-chuan-jie-ti-bao-gao/</id>
+        <link href="http://localhost:4000/post/luogu4173-can-que-de-zi-fu-chuan-jie-ti-bao-gao/">
         </link>
         <updated>2021-01-03T10:47:15.000Z</updated>
         <content type="html"><![CDATA[<h2 id="description">Description</h2>
@@ -846,8 +872,8 @@ namespace SAM2{
     </entry>
     <entry>
         <title type="html"><![CDATA[[HNOI2004]L语言 解题报告]]></title>
-        <id>https://parallelist-c.github.io/post/hnoi2004l-yu-yan/</id>
-        <link href="https://parallelist-c.github.io/post/hnoi2004l-yu-yan/">
+        <id>http://localhost:4000/post/hnoi2004l-yu-yan/</id>
+        <link href="http://localhost:4000/post/hnoi2004l-yu-yan/">
         </link>
         <updated>2021-01-03T04:45:53.000Z</updated>
         <content type="html"><![CDATA[<h2 id="description">Description</h2>
@@ -920,8 +946,8 @@ int main(){
     </entry>
     <entry>
         <title type="html"><![CDATA[[HAOI2009]求回文串 解题报告]]></title>
-        <id>https://parallelist-c.github.io/post/haoi2009qiu-hui-wen-chuan-jie-ti-bao-gao/</id>
-        <link href="https://parallelist-c.github.io/post/haoi2009qiu-hui-wen-chuan-jie-ti-bao-gao/">
+        <id>http://localhost:4000/post/haoi2009qiu-hui-wen-chuan-jie-ti-bao-gao/</id>
+        <link href="http://localhost:4000/post/haoi2009qiu-hui-wen-chuan-jie-ti-bao-gao/">
         </link>
         <updated>2021-01-03T01:38:23.000Z</updated>
         <content type="html"><![CDATA[<h2 id="description">Description</h2>
@@ -954,65 +980,6 @@ while(idx&lt;=len&amp;&amp;nl&lt;=nr){
     ++nl,--nr,vis[mat]=1;++idx;
 }
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[PAM 学习笔记]]></title>
-        <id>https://parallelist-c.github.io/post/PAM-xue-xi-bi-ji/</id>
-        <link href="https://parallelist-c.github.io/post/PAM-xue-xi-bi-ji/">
-        </link>
-        <updated>2021-01-02T02:54:21.000Z</updated>
-        <content type="html"><![CDATA[<p>回文自动机（PAM）是针对给定串，包含了该串所有回文子串的信息的自动机。<br>
-PAM 的每个节点代表了一个本质不同的回文子串，记 s[p] 为点 p 代表的回文子串。<br>
-PAM 的每个节点有三个基础属性：fail/len/child 。<br>
-len：a[p].len 表示 s[p] 的长度。<br>
-fail：a[p].fail 连向了点 x ，满足 s[x] 是 s[p] 的最长后缀回文子串。<br>
-child：a[p].child[v] 连向了点 x ，满足 s[x] 恰是 v+s[p]+v 。因此转移时 len 会加二。</p>
-<p>由于回文串有奇偶之分，所以我们需要建立两个根：-1 和 0 ，分别为奇根和偶根。奇根的 len 为 -1 ，代表 -1 串（方便插入单个字符构成的回文串）；偶根的 len 为 0 ，代表空串。奇根的 fail 可以任意连，而偶根的 fail 定义为连向奇根。</p>
-<p>现在给定字符串 t ，我们考虑使用增量法来构造 PAM 。<br>
-假设新加入的位置为 v ，上一个权值加入后在 SAM 上的位置是 las 。v 可以构成的回文子串可以视作 t[v']+mid+t[v] 的形式，其中 mid 部分也为回文串。故我们从 las 开始，若满足 t[v]=t[v-a[las].len-1] ，意味着我们找到了对应的最大回文串；否则执行 las=a[las].fail 并重新检验。因为 fail 指向的是最长的后缀回文子串，所以我们必定会经过所有可能。<br>
-假设我们找到了满足 t[v]=t[v-a[las].len-1] 的 las ，此时有两种可能：</p>
-<ul>
-<li>a[las].c[t[v]] 已存在。此时 v 对于不同种类的回文子串而言无任何贡献。</li>
-<li>a[las].c[t[v]] 未存在。此时发现了新的回文子串。新建节点并初始化其 len/fail 值即可。</li>
-</ul>
-<p>构建代码：</p>
-<pre><code class="language-cpp">namespace PAM{
-    int s[N];
-    int tot,las,top;
-    struct PAM{
-        int len,sum,fail,c[26];
-    }a[N];
-    void init(){
-        tot=1,las=0,top=0;
-        a[0].len=0,a[1].len=-1;
-        a[0].fail=a[1].fail=1;
-        memset(s,-1,sizeof s);
-    }
-    int getfail(int x,int p){
-        while(s[p]!=s[p-a[x].len-1])
-            x=a[x].fail;
-        return x; 
-    }
-    void insert(int v){
-        s[++top]=v;
-        int cur=getfail(las,top);
-        if(a[cur].c[v]==0){
-            ++tot;
-            a[tot].len=a[cur].len+2;
-            a[tot].fail=a[getfail(a[cur].fail,top)].c[v];
-            a[cur].c[v]=tot;
-        }
-        las=a[cur].c[v];
-    }
-}
-</code></pre>
-<p>接着总结下 PAM 的一些应用。</p>
-<p>本质不同的回文串个数：这个显然就是 tot-1 。</p>
-<p>回文串的出现次数：构建 PAM 时我们只统计了极长的该回文串的数量，但其他情况可以一定可以通过跳 fail 统计到。考虑 insert(a[i]) 后若新增节点代表的是 s[j...i] ，那么所有以 i 结尾的回文子串必定是 s[j...i] 的后缀子串。拓扑排序后 dp 即可。</p>
-<p>与 PAM 配套的有一个 trans 指针，定义为指向小于等于当前节点长度的一半的最长回文后缀。<br>
-求解 trans 的方法与 fail 类似。从父节点的 trans 开始检验，如果当前并不能构成回文子串/长度大于一半，就继续跳 fail 。</p>
-<p>PAM 的拓展性没有 SAM 强，但也十分灵活。DFA 这种东西，平常一定要多加深理解啊 👊 。</p>
 ]]></content>
     </entry>
 </feed>
