@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://parallelist-c.github.io</id>
     <title>Parallelist</title>
-    <updated>2021-01-15T03:45:52.790Z</updated>
+    <updated>2021-01-16T05:20:30.755Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://parallelist-c.github.io"/>
     <link rel="self" href="https://parallelist-c.github.io/atom.xml"/>
@@ -10,32 +10,6 @@
     <logo>https://parallelist-c.github.io/images/avatar.png</logo>
     <icon>https://parallelist-c.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Parallelist</rights>
-    <entry>
-        <title type="html"><![CDATA[吸颜合集]]></title>
-        <id>https://parallelist-c.github.io/post/xi-yan-he-ji/</id>
-        <link href="https://parallelist-c.github.io/post/xi-yan-he-ji/">
-        </link>
-        <updated>2021-01-15T01:33:27.000Z</updated>
-        <content type="html"><![CDATA[<p>枯燥的竞赛生活需要自己找快乐</p>
-<hr>
-<h2 id="杨超越">杨超越</h2>
-<p>神仙的颜太戳我了💘<br>
-<img src="https://parallelist-c.github.io/post-images/1610674568221.jpg" alt="" loading="lazy"><br>
-<img src="https://parallelist-c.github.io/post-images/1610674583782.jpg" alt="" loading="lazy"><br>
-<img src="https://parallelist-c.github.io/post-images/1610674611356.jpg" alt="" loading="lazy"><br>
-<img src="https://parallelist-c.github.io/post-images/1610674644738.jpg" alt="" loading="lazy"><br>
-<img src="https://parallelist-c.github.io/post-images/1610674689315.jpg" alt="" loading="lazy"></p>
-<h2 id="中森明菜">中森明菜</h2>
-<p>昭和天后，人美歌甜💝<br>
-<img src="https://parallelist-c.github.io/post-images/1610674809954.jpg" alt="" loading="lazy"><br>
-<img src="https://parallelist-c.github.io/post-images/1610674812913.jpg" alt="" loading="lazy"></p>
-<h2 id="大后寿寿花">大后寿寿花</h2>
-<p>《艺妓回忆录》颜值巅峰 眼睛真的灵动。<br>
-<img src="https://parallelist-c.github.io/post-images/1610674956182.jpg" alt="" loading="lazy"><br>
-<img src="https://parallelist-c.github.io/post-images/1610674962128.jpg" alt="" loading="lazy"><br>
-<img src="https://parallelist-c.github.io/post-images/1610675408457.jpg" alt="" loading="lazy"></p>
-]]></content>
-    </entry>
     <entry>
         <title type="html"><![CDATA[HNOI2016 解题报告]]></title>
         <id>https://parallelist-c.github.io/post/hnoi2016-jie-ti-bao-gao/</id>
@@ -572,7 +546,7 @@ int main(){
 我们需要两个前置操作：<code>getpos(u)</code> 和 <code>getnode(u)</code> ，分别是找到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">u</span></span></span></span> 对应的虚拟节点和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">u</span></span></span></span> 在模板树上的对应节点。<br>
 记录每个虚拟节点所占据的编号区间即可二分实现 <code>getpos</code> 。<code>getnode</code> 实际上是求子树内编号第 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 小，可以通过主席树解决。<br>
 剩下的就不停往上跳/特判就行啦。写起来还是蛮爽的。</p>
-<p>复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="script">O</mi><mo>(</mo><mo>(</mo><mi>m</mi><mo>+</mo><mi>q</mi><msub><mi>log</mi><mo>⁡</mo><mn>2</mn></msub><mi>m</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal{O}((m+q\log_2m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathcal" style="margin-right:0.02778em;">O</span></span><span class="mopen">(</span><span class="mopen">(</span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.20696799999999996em;"><span style="top:-2.4558600000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.24414em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mclose">)</span></span></span></span> 。要注意常数。</p>
+<p>复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="script">O</mi><mo>(</mo><mo>(</mo><mi>m</mi><mo>+</mo><mi>q</mi><mo>)</mo><msub><mi>log</mi><mo>⁡</mo><mn>2</mn></msub><mi>m</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal{O}((m+q)\log_2m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathcal" style="margin-right:0.02778em;">O</span></span><span class="mopen">(</span><span class="mopen">(</span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.20696799999999996em;"><span style="top:-2.4558600000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.24414em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mclose">)</span></span></span></span> 。要注意常数。</p>
 <h2 id="code-6">Code</h2>
 <pre><code class="language-cpp">const int N=1e5+5,M=22;
 using namespace std;
@@ -708,7 +682,7 @@ int main(){
 }
 </code></pre>
 <h1 id="analysis">Analysis</h1>
-<p>5 道数据结构 1 道计算几何 😅 差不多得了！<br>
+<p>5 道数据结构 1 道计算几何 😅 差不多得了<br>
 省选还是很重视 trick 的考察。平常多做题。</p>
 ]]></content>
     </entry>
@@ -2047,6 +2021,117 @@ namespace SAM{
         }
         printf(&quot;%d\n&quot;,ans);
     }
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[[SHOI2014]三叉神经树 解题报告]]></title>
+        <id>https://parallelist-c.github.io/post/shoi2014san-cha-shen-jing-shu-jie-ti-bao-gao/</id>
+        <link href="https://parallelist-c.github.io/post/shoi2014san-cha-shen-jing-shu-jie-ti-bao-gao/">
+        </link>
+        <updated>2021-01-06T10:22:46.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="description">Description</h2>
+<p>给定一棵以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 为根的有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn><mi>n</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">3n+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">3</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 个节点的树，树上每个节点均有一个输出端。树上有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 个节点有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> 个子节点，其余的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>n</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2n+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 个节点无子节点（也就是叶子）。<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>n</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2n+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 个节点的初始值均为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mi mathvariant="normal">/</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">0/1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">0</span><span class="mord">/</span><span class="mord">1</span></span></span></span> ，并且已经提前知道；剩余 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 个节点的值为其 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> 个子节点中出现次数最多的值。<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span></span></span></span> 次询问，每次改变一个叶子节点的值，求操作后根节点的值。<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo separator="true">,</mo><mi>q</mi><mo>≤</mo><mn>5</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">n,q\leq 5\times 10^5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8304100000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span></p>
+<h2 id="solution">Solution</h2>
+<p>可以发现每次修改必定是修改一条自底向上的链。并且这条链有一些比较明显的性质：</p>
+<ul>
+<li>链上的点必定修改成同一值</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">u</span></span></span></span> 改变时 <code>fa[u]</code> 也改变，当且仅当 <code>fa[u]</code> 的另外两个子节点的值恰好一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span></li>
+</ul>
+<p>但是如何快速查询修改链的顶端节点以及修改链上的点值呢？<br>
+不妨再深入找找性质。<br>
+当叶子节点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">u</span></span></span></span> 从 0 变为 1 时，若其父节点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi></mrow><annotation encoding="application/x-tex">v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span></span></span></span> 目前的子节点权值和为 1 ，那么父节点将会由 0 变为 1 ，继续上传；否则就此打住。同理， <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi></mrow><annotation encoding="application/x-tex">v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span></span></span></span> 能够再影响到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi></mrow><annotation encoding="application/x-tex">v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span></span></span></span> 的父节点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 当且仅当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 的目前的子节点权值和为 1 。当叶子节点从 1 变为 0 的情况也是类似的，只不过是要求目前的子节点权值和为 2 。<br>
+问题至此就水落石出了。我们将那 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 个节点按照子节点的权值和分为 4 类，分别为 0-3 。<br>
+链上的查询只会在碰到深度最深的非 1/2 类节点时停下来，于是我们在 LCT 上维护下这个东西就行了。<br>
+发现链上修改就是区间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>+</mo><mn>1</mn><mi mathvariant="normal">/</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">+1/-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">+</span><span class="mord">1</span><span class="mord">/</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> ，直接打标记也可以做。</p>
+<p>复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="script">O</mi><mo>(</mo><mi>q</mi><msub><mi>log</mi><mo>⁡</mo><mn>2</mn></msub><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal{O}(q\log_2{n})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathcal" style="margin-right:0.02778em;">O</span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.20696799999999996em;"><span style="top:-2.4558600000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.24414em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">n</span></span><span class="mclose">)</span></span></span></span> 。<br>
+这道题当然也可以不用 LCT 而是用树链剖分。事实上，这只是用线段树维护链还是用 Splay 维护链的问题。而由于树链剖分时首先需要把链剖成 log 段，故在本题中，树链剖分的复杂度不如 LCT 。</p>
+<h2 id="code">Code</h2>
+<pre><code class="language-cpp">const int N=2e6+5;
+using namespace std;
+int n,q;
+vector&lt;int&gt;child[N];
+namespace LCT{
+#define lc(x) c[x][0]
+#define rc(x) c[x][1]
+    int v[N],fa[N],one[N],two[N],tag[N],c[N][2];
+    bool isrt(int x){
+        return fa[x]==0 || (lc(fa[x])!=x&amp;&amp;rc(fa[x])!=x);
+    }
+    void update(int x){
+        if(one[rc(x)]) one[x]=one[rc(x)];
+        else if(v[x]^1) one[x]=x;
+        else one[x]=one[lc(x)];
+        if(two[rc(x)]) two[x]=two[rc(x)];
+        else if(v[x]^2) two[x]=x;
+        else two[x]=two[lc(x)];
+    }
+    void pushmk(int x,int d){
+        tag[x]+=d;swap(one[x],two[x]);v[x]^=3;
+    }
+    void pushdn(int x){
+        pushmk(lc(x),tag[x]);
+        pushmk(rc(x),tag[x]);
+        tag[x]=0;
+    }
+    void rotate(int x){
+        int y=fa[x],z=fa[y],t=rc(y)==x;
+        if(!isrt(y)) c[z][rc(z)==y]=x;fa[x]=z;
+        c[y][t]=c[x][t^1];fa[c[x][t^1]]=y;
+        c[x][t^1]=y;fa[y]=x;
+        update(y),update(x);
+    }
+    void pushall(int x){
+        if(!isrt(x)) pushall(fa[x]);
+        if(tag[x]) pushdn(x);
+    }
+    void splay(int x){
+        pushall(x);
+        while(!isrt(x)){
+            int y=fa[x],z=fa[y];
+            if(!isrt(y))
+                ((rc(y)==x)^(rc(z)==y))?rotate(x):rotate(y);
+            rotate(x);
+        }
+        update(x);
+    }
+    void access(int x){
+        int times=0;
+        for(int i=0;x;x=fa[i=x])
+            splay(x),rc(x)=i,update(x),++times;
+    }
+}
+using namespace LCT;
+void DFS(int p){
+    for(auto u:child[p])
+        DFS(u),v[p]+=(v[u]&gt;&gt;1);
+    if(p&lt;=n) update(p);
+}
+int main(){
+    
+    r(n);
+    for(int i=1;i&lt;=n;++i)
+    for(int j=1,x;j&lt;=3;++j)
+        r(x),child[i].push_back(x),fa[x]=i;
+    for(int i=n+1;i&lt;=3*n+1;++i)
+        r(v[i]),v[i]&lt;&lt;=1;
+    DFS(1);
+    r(q);int ans=v[1]&gt;&gt;1;
+    for(int i=1,x;i&lt;=q;++i){
+        r(x);
+        int tp=(v[x]^=2)-1;
+        access(x=fa[x]);splay(x);
+        if((~tp?one:two)[x]){ // -1:1to0 1:0to1
+            x=(~tp?one:two)[x];
+            splay(x);pushmk(rc(x),tp);update(rc(x));
+            v[x]+=tp;update(x);
+        }
+        else pushmk(x,tp),update(x),ans^=1;
+        w(ans);
+    }
+    return 0;
 }
 </code></pre>
 ]]></content>
