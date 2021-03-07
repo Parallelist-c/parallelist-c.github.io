@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://parallelist-c.github.io</id>
     <title>Parallelist</title>
-    <updated>2021-03-07T12:05:59.623Z</updated>
+    <updated>2021-03-07T12:53:21.218Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://parallelist-c.github.io"/>
     <link rel="self" href="https://parallelist-c.github.io/atom.xml"/>
@@ -38,7 +38,7 @@
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[AGC025D Choosing Points 解题报告]]></title>
+        <title type="html"><![CDATA[AGC025D Choosing Points]]></title>
         <id>https://parallelist-c.github.io/post/agc025d-choosing-points-jie-ti-bao-gao/</id>
         <link href="https://parallelist-c.github.io/post/agc025d-choosing-points-jie-ti-bao-gao/">
         </link>
@@ -113,7 +113,7 @@ int main(){
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[[NOI2008] 志愿者招募 解题报告]]></title>
+        <title type="html"><![CDATA[[NOI2008] 志愿者招募]]></title>
         <id>https://parallelist-c.github.io/post/noi2008-zhi-yuan-zhe-zhao-mu-jie-ti-bao-gao/</id>
         <link href="https://parallelist-c.github.io/post/noi2008-zhi-yuan-zhe-zhao-mu-jie-ti-bao-gao/">
         </link>
@@ -284,7 +284,7 @@ A&#x27;_xB&#x27;x=\sum_{i}f(x,i)A_i\sum_{j}f(x,j)B_j=\sum_{i}\sum_{j}f(x,i)f(x,j
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[CF715E Complete the Permutations 解题报告]]></title>
+        <title type="html"><![CDATA[CF715E Complete the Permutations]]></title>
         <id>https://parallelist-c.github.io/post/cf715e-complete-the-permutations-jie-ti-bao-gao/</id>
         <link href="https://parallelist-c.github.io/post/cf715e-complete-the-permutations-jie-ti-bao-gao/">
         </link>
@@ -412,7 +412,7 @@ int main(){
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[CF840C On the Bench 解题报告]]></title>
+        <title type="html"><![CDATA[CF840C On the Bench]]></title>
         <id>https://parallelist-c.github.io/post/cf840c-on-the-bench-jie-ti-bao-gao/</id>
         <link href="https://parallelist-c.github.io/post/cf840c-on-the-bench-jie-ti-bao-gao/">
         </link>
@@ -506,7 +506,7 @@ int main(){
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[CF961G Partitions 解题报告]]></title>
+        <title type="html"><![CDATA[CF961G Partitions]]></title>
         <id>https://parallelist-c.github.io/post/cf961g-partitions/</id>
         <link href="https://parallelist-c.github.io/post/cf961g-partitions/">
         </link>
@@ -582,7 +582,7 @@ int main(){
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Luogu3166 [CQOI2014]数三角形 解题报告]]></title>
+        <title type="html"><![CDATA[[CQOI2014] 数三角形]]></title>
         <id>https://parallelist-c.github.io/post/p3166-cqoi2014shu-san-jiao-xing/</id>
         <link href="https://parallelist-c.github.io/post/p3166-cqoi2014shu-san-jiao-xing/">
         </link>
@@ -623,7 +623,7 @@ int main(){
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[CF917D Stranger Trees 解题报告]]></title>
+        <title type="html"><![CDATA[CF917D Stranger Trees]]></title>
         <id>https://parallelist-c.github.io/post/cf917d-stranger-trees-jie-ti-bao-gao/</id>
         <link href="https://parallelist-c.github.io/post/cf917d-stranger-trees-jie-ti-bao-gao/">
         </link>
@@ -727,7 +727,7 @@ int main(){
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[CF1285F Classical 解题报告]]></title>
+        <title type="html"><![CDATA[CF1285F Classical]]></title>
         <id>https://parallelist-c.github.io/post/cf1285f-classical/</id>
         <link href="https://parallelist-c.github.io/post/cf1285f-classical/">
         </link>
